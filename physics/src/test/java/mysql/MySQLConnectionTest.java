@@ -20,13 +20,10 @@ public class MySQLConnectionTest {
 	
 	@Test
 	public void testConnection() throws Exception{
-		Connection con = ds.getConnection();
-		try{
+		try (Connection con = ds.getConnection()){
 			System.out.println(" \n\n Connection: " + con + "\n\n");
 		}catch (Exception e){
 			e.printStackTrace();
-		}finally {
-			con.close();
 		}
 		
 	}
