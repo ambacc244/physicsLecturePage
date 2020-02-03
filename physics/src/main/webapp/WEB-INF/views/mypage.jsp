@@ -7,6 +7,6 @@
 <title>My Page</title>
 </head>
 <body>
-
+	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
 </body>
 </html>

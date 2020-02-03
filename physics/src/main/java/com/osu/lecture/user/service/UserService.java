@@ -1,8 +1,37 @@
 package com.osu.lecture.user.service;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.osu.lecture.user.User;
+import com.osu.lecture.user.controller.UserController;
+import com.osu.lecture.user.dao.UserDao;
+
 @Service
-public class UserService {
+public class UserService implements IUserService {
+	
+	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+	@Inject 
+	UserDao userDao;
+	
+	@Override
+	public boolean loginCheck(User user, HttpSession session) {
+		logger.info("HERE");
+		boolean result = userDao.loginCheck(user);
+		logger.info("HERE");
+		//if id and password exist
+		if(result) {
+			User user2 = userDao.viewUser(user);
+
+			session.setAttribute("userId", user2.getUserId());
+			session.setAttribute("userPw", user2.getUserPw());
+		}
+		return result;
+	}
+	
 
 }
