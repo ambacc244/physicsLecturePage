@@ -6,4 +6,5 @@ import com.osu.lecture.user.User;
 
 public interface IUserService {
 	public boolean loginCheck(User user, HttpSession session);
+	public void register(User user) throws Exception;
 }

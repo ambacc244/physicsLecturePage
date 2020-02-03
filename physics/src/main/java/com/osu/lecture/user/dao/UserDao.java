@@ -28,4 +28,9 @@ public class UserDao implements IUserDao {
 	public void logout(HttpSession session) {
 		
 	}
+	
+	@Override
+	public void register(User user) throws Exception {
+		sqlSession.selectOne("user.register", user);
+	}
 }

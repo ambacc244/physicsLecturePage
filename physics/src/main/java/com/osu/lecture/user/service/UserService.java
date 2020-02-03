@@ -1,5 +1,7 @@
 package com.osu.lecture.user.service;
 
+import java.sql.SQLException;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -31,6 +33,11 @@ public class UserService implements IUserService {
 			session.setAttribute("userPw", user2.getUserPw());
 		}
 		return result;
+	}
+	
+	@Override
+	public void register(User user) throws Exception {
+		userDao.register(user);
 	}
 	
 

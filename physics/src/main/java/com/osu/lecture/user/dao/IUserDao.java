@@ -8,4 +8,5 @@ public interface IUserDao {
 	public boolean loginCheck(User user);
 	public User viewUser(User user);
 	public void logout(HttpSession session);
+	public void register(User user) throws Exception;
 }

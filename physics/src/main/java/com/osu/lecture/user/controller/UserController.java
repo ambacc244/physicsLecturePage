@@ -27,20 +27,13 @@ public class UserController {
 		return "login";  //return login.jsp page 
 	}
 	
-	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage() {
-		return "mypage";  //return mypage.jsp page 
-	}
-	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView loginCheck(@ModelAttribute User user, HttpSession session) {
-		
+	public ModelAndView loginCheck(@ModelAttribute User user, HttpSession session) {	
 
 		boolean result = userService.loginCheck(user, session);
-	//	logger.info("HERE");
+
 		ModelAndView mav =  new ModelAndView();
-	//	logger.info("HERE");
-		
+
 		if(result == true) {
 			logger.info("Welcome mypage!");
 			mav.setViewName("mypage");
@@ -52,11 +45,14 @@ public class UserController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public String mypage() {
+		return "mypage";  //return mypage.jsp page 
+	}
 	
+	@RequestMapping(value = "/mypage", method = RequestMethod.POST)
+	public void register(@ModelAttribute User user) throws Exception{
+		userService.register(user);
+	}
 
-	
-	
-	
-	
-	
 }
