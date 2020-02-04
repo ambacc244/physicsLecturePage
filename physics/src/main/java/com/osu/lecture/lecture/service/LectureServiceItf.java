@@ -1,10 +1,10 @@
-package com.osu.lecture.lecture.dao;
+package com.osu.lecture.lecture.service;
 
 import java.util.List;
 
 import com.osu.lecture.lecture.service.LectureVO;
 
-public interface LectureDao {
+public interface LectureServiceItf {
 	public void create(LectureVO vo) throws Exception;
 	
 	public List<LectureVO> listAll() throws Exception;
