@@ -11,11 +11,13 @@
     </insert>
     
      <select id="listLecture" resultType="com.osu.lecture.lecture.service.LectureVO">
-    <![CDATA[
+    
+        select * from lecture
+    <!-- <![CDATA[
     
         select * from lecture
         order by lectureId DESC
-    ]]>
+    ]]> -->
     </select>
     
     <select id="detailLecture" resultType="com.osu.lecture.lecture.service.LectureVO">

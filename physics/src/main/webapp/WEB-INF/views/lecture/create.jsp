@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lecture List</title>
+<title>Add Lecture</title>
 </head>
 <body>
     <h1>Add lecture</h1>
