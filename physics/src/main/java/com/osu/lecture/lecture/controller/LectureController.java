@@ -27,6 +27,7 @@ public class LectureController {
         System.out.println(lecture.toString());
 
         service.create(lecture);
+        model.addAttribute("result", "Done!");
 
         return "/lecture/success";
     }

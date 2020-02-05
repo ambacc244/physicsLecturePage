@@ -4,17 +4,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
+<mapper namespace="com.osu.lecture.mapper.lecture-Mapper">
  
-<mapper namespace="com.osu.mapper.lecture-mapper">
- 
- 
-    <!-- 게시판 추가하기 -->
     <insert id="insertLecture">
         insert into lecture (title,description,link,date,instructor_id) values(#{lectureTitle},#{lectureDesc},#{lectureLink},SYSDATE(), #{instructorId})
     </insert>
     
-    <!-- 게시판 리스트보기 -->
-    <select id="listLecture" resultType="com.osu.lecture.lecture.service">
+     <select id="listLecture" resultType="com.osu.lecture.lecture.service.LectureVO">
     <![CDATA[
     
         select * from lecture
@@ -22,19 +18,16 @@
     ]]>
     </select>
     
-    <!-- 게시판 상세보기 -->
-    <select id="detailLecture" resultType="com.osu.lecture.lecture.service">
+    <select id="detailLecture" resultType="com.osu.lecture.lecture.service.LectureVO">
             select * from lecture where lectureId = #{lectureId}
     </select>
  
-    <!-- 게시판 삭제하기 -->
     <delete id="deleteLecture">
         delete from lecture where lectureId = #{lectureId}
     </delete>
     
-    <!-- 게시판 수정하기 
     <update id="updateLecture">
-        update hello_board set b_title=#{b_title} , b_detail = #{b_detail} where b_no = #{b_no}
+        update lecture set lectureTitle = #{lectureTitle}
     </update>
- 	-->
+
 </mapper>

@@ -15,7 +15,7 @@ public class LectureDAOImp implements LectureDao{
 	@Inject
 	private SqlSession sqlSession;
 	
-	private static final String namespace = "com.osu.mapper.lecture-mapper";
+	private static final String namespace = "com.osu.lecture.mapper.lecture-Mapper";
 	
 	@Override
 	public void create(LectureVO vo) throws Exception {
