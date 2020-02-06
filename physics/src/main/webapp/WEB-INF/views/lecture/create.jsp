@@ -19,7 +19,7 @@
             <textarea name="lectureDesc" cols="30" rows="10" placeholder="lecture desc"></textarea>
         </div>
         <div class="createForm">
-            <label>Author</label>
+            <label>Link</label>
             <input type="text" name="lectureLink" class="createForm" placeholder="author">
         </div>
         <div class="formFooter">

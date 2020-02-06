@@ -13,6 +13,6 @@
         </script>
     </head>
     <body>
-       
+       <c:forEach var="lectureVO" items="${lecture}"></c:forEach>
     </body>
 </html>
