@@ -9,8 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.osu.lecture.user.User;
-import com.osu.lecture.user.controller.UserController;
+import com.osu.lecture.user.UserVO;
 import com.osu.lecture.user.dao.UserDao;
 
 @Service
@@ -21,12 +20,14 @@ public class UserService implements IUserService {
 	UserDao userDao;
 	
 	@Override
-	public boolean loginCheck(User user, HttpSession session) {
+	public boolean loginCheck(UserVO user, HttpSession session) {
+		logger.info("1");
 		boolean result = userDao.loginCheck(user);
+		logger.info("2");
 		//if id and password exist
 		if(result) {
-			User user2 = userDao.viewUser(user);
-
+			UserVO user2 = userDao.viewUser(user);
+			logger.info("3");
 			session.setAttribute("userId", user2.getUserId());
 			session.setAttribute("userPw", user2.getUserPw());
 		}
@@ -34,9 +35,7 @@ public class UserService implements IUserService {
 	}
 	
 	@Override
-	public void register(User user) throws Exception {
+	public void register(UserVO user) throws Exception {
 		userDao.register(user);
 	}
-	
-
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.osu.lecture.HomeController;
-import com.osu.lecture.user.User;
+import com.osu.lecture.user.UserVO;
 import com.osu.lecture.user.service.UserService;
 
 @Controller
@@ -28,12 +28,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView loginCheck(@ModelAttribute User user, HttpSession session) {	
-
+	public ModelAndView loginCheck(@ModelAttribute UserVO user, HttpSession session) {	
+		logger.info("111");
 		boolean result = userService.loginCheck(user, session);
-
+		logger.info("222");
 		ModelAndView mav =  new ModelAndView();
-
+		logger.info("333");
 		if(result == true) {
 			logger.info("Welcome mypage!");
 			mav.setViewName("mypage");
@@ -56,7 +56,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.POST)
-	public void register(@ModelAttribute User user) throws Exception{
+	public void register(@ModelAttribute UserVO user) throws Exception{
 		userService.register(user);
 	}
 

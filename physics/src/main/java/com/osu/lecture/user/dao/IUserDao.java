@@ -2,11 +2,11 @@ package com.osu.lecture.user.dao;
 
 import javax.servlet.http.HttpSession;
 
-import com.osu.lecture.user.User;
+import com.osu.lecture.user.UserVO;
 
 public interface IUserDao {
-	public boolean loginCheck(User user);
-	public User viewUser(User user);
+	public boolean loginCheck(UserVO user);
+	public UserVO viewUser(UserVO user);
 	public void logout(HttpSession session);
-	public void register(User user) throws Exception;
+	public void register(UserVO user) throws Exception;
 }

@@ -1,6 +1,6 @@
 package com.osu.lecture.user;
 
-public class User {
+public class UserVO {
 	private String userId;
 	private String userPw;
 

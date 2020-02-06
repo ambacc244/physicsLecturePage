@@ -4,24 +4,29 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import com.osu.lecture.user.User;
+import com.osu.lecture.user.UserVO;
 
 @Repository
 public class UserDao implements IUserDao {
+	private static final Logger logger = LoggerFactory.getLogger(UserDao.class);
 	@Inject 
 	SqlSession sqlSession;
 	
 	@Override 
-	public boolean loginCheck(User user) {
-		String sql = sqlSession.selectOne("user.loginCheck", user);
+	public boolean loginCheck(UserVO user) {
+		logger.info("11");
+		String sql = sqlSession.selectOne("User.loginCheck", user);
+		logger.info("22");
 		return (sql == null) ? false : true;
 	}
 	
 	@Override
-	public User viewUser(User user) {
-		return sqlSession.selectOne("user.viewUser", user);
+	public UserVO viewUser(UserVO user) {
+		return sqlSession.selectOne("User.viewUser", user);
 	}
 	
 	@Override
@@ -30,7 +35,7 @@ public class UserDao implements IUserDao {
 	}
 	
 	@Override
-	public void register(User user) throws Exception {
-		sqlSession.selectOne("user.register", user);
+	public void register(UserVO user) throws Exception {
+		sqlSession.selectOne("User.register", user);
 	}
 }

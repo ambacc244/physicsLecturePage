@@ -2,9 +2,9 @@ package com.osu.lecture.user.service;
 
 import javax.servlet.http.HttpSession;
 
-import com.osu.lecture.user.User;
+import com.osu.lecture.user.UserVO;
 
 public interface IUserService {
-	public boolean loginCheck(User user, HttpSession session);
-	public void register(User user) throws Exception;
+	public boolean loginCheck(UserVO user, HttpSession session);
+	public void register(UserVO user) throws Exception;
 }
