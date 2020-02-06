@@ -22,9 +22,7 @@ public class UserService implements IUserService {
 	
 	@Override
 	public boolean loginCheck(User user, HttpSession session) {
-		logger.info("HERE");
 		boolean result = userDao.loginCheck(user);
-		logger.info("HERE");
 		//if id and password exist
 		if(result) {
 			User user2 = userDao.viewUser(user);

@@ -45,6 +45,11 @@ public class UserController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout() {
+		return "redirect:/";  //return main page
+	}
+	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public String mypage() {
 		return "mypage";  //return mypage.jsp page 

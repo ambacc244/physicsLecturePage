@@ -11,8 +11,8 @@
 	<h1>Login</h1>
 	
 	<form name="loginForm" action="${path}/lecture/login" method="post">
-		ID : <input type="text" name="userId" ><br>
-		PW : <input type="password" name="userPw" ><br>
+		ID : <input type="text" name="userId"><br>
+		PW : <input type="password" name="userPw"><br>
 		<button type="submit" onclick="login()">Login</button>
 	</form>
 </body>
