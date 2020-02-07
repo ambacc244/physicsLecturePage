@@ -31,10 +31,6 @@ public class LectureController {
         //Data will be used only once, and it won't be visible.
         ra.addFlashAttribute("result", "Done!");
         
-        //where the null values come in 
-        if(nullTest(lecture)){
-            return "redirect:/lecture/listAll";
-        }
         return "redirect:/lecture/listAll";
     }
 
@@ -42,9 +38,5 @@ public class LectureController {
     public void listAll(Model model) throws Exception{
         System.out.println("/lecture/listAll Page");
         model.addAttribute("lecureList", service.listAll());
-    }
-
-    public Boolean nullTest(LectureVO lecture){
-        return false;
     }
 }
