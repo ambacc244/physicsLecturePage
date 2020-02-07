@@ -4,7 +4,7 @@
 <mapper namespace="com.osu.lecture.mapper.LectureMapper">
  
     <insert id="insertLecture">
-        INSERT INTO lecture (title, description, link, date, instructor_id) VALUES (#{lectureTitle}, #{lectureDesc}, #{lectureLink},SYSDATE(), #{instructorId})
+        INSERT INTO lecture (title, description, link, date, instructor_id) VALUES (#{lectureTitle}, #{lectureDesc}, #{lectureLink}, #{lectureDate}, #{instructorId})
     </insert>
     
     <select id="listLecture" resultType="com.osu.lecture.lecture.LectureVO">

@@ -8,7 +8,7 @@ public class LectureVO {
 	private String lectureTitle;
     private String lectureDesc;
     private String lectureLink;
-    private Date lectureDate;
+    private String lectureDate;
     private int instructorId;
 
     public LectureVO(){}
@@ -45,11 +45,11 @@ public class LectureVO {
 		this.lectureLink = lectureLink;
 	}
 
-	public Date getLectureDate() {
+	public String getLectureDate() {
 		return lectureDate;
 	}
 
-	public void setLectureDate(Date lectureDate) {
+	public void setLectureDate(String lectureDate) {
 		this.lectureDate = lectureDate;
 	}
 
@@ -60,5 +60,11 @@ public class LectureVO {
 	public void setInstructorId(int instructorId) {
 		this.instructorId = instructorId;
 	}
-    
+	
+	@Override
+	public String toString() {
+		return "LectureVO [lectureId=" + lectureId + ", lectureTitle=" + lectureTitle + ", lectureDesc=" + lectureDesc
+				+ ", lectureLink=" + lectureLink + ", lectureDate=" + lectureDate + ", instructorId=" + instructorId
+				+ "]";
+	}
 }

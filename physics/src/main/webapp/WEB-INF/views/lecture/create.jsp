@@ -24,7 +24,11 @@
         </div>
         <div class="createForm">
             <label>Author Id</label>
-            <input type="text" name="lectureLink" class="createForm" placeholder="author">
+            <input type="text" name="instructorId" class="createForm" placeholder="author">
+        </div>
+        <div class="createForm">
+            <label>Date</label>
+            <input type="date" name="lectureDate" class="createForm" placeholder="lecture Date">
         </div>
         <div class="formFooter">
             <button type="submit" class="btn_botton">Submit</button>
