@@ -27,6 +27,11 @@ public class LectureService implements ILectureService{
 	public List<LectureVO> upcomingLectureList() {
 		return dao.upcomingLectureList();
 	}
+	
+	@Override
+	public List<LectureVO> pastLectureList() {
+		return dao.pastLectureList();
+	}
 
 	@Override
 	public LectureVO read(int lectureId) throws Exception {

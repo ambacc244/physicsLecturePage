@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Main Page (= Upcoming Lecture Page)</title>
 </head>
 <body>
@@ -24,6 +25,5 @@
 			</div>
 	    </c:forEach>
 	 </div>
-
 </body>
 </html>

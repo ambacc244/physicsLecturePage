@@ -45,7 +45,13 @@ public class LectureController {
         return "upcoming";
     }
     
-
+    @RequestMapping(value="/past", method=RequestMethod.GET)
+    public String past(Model model){
+    	List<LectureVO> list = service.pastLectureList();
+    	model.addAttribute("list", list);
+        return "past";
+    }
+    
     
     
     
