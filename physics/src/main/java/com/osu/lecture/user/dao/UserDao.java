@@ -18,9 +18,7 @@ public class UserDao implements IUserDao {
 	
 	@Override 
 	public boolean loginCheck(UserVO user) {
-		logger.info("11");
 		String sql = sqlSession.selectOne("User.loginCheck", user);
-		logger.info("22");
 		return (sql == null) ? false : true;
 	}
 	

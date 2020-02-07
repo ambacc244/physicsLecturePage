@@ -29,11 +29,8 @@ public class UserController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView loginCheck(@ModelAttribute UserVO user, HttpSession session) {	
-		logger.info("111");
 		boolean result = userService.loginCheck(user, session);
-		logger.info("222");
 		ModelAndView mav =  new ModelAndView();
-		logger.info("333");
 		if(result == true) {
 			logger.info("Welcome mypage!");
 			mav.setViewName("mypage");
