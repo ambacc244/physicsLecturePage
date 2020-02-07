@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/lecture/")
 public class LectureController {
     @Inject
     private LectureService service;
 
     @RequestMapping(value="/create", method=RequestMethod.GET)
-    public void createGET(LectureVO lecture, Model model) throws Exception{
+    public String createGET(LectureVO lecture, Model model) throws Exception{
         System.out.println("/lecture/creat. GET");
+        return "lecture/create";
     }
 
     @RequestMapping(value="/create", method=RequestMethod.POST)
@@ -31,12 +31,13 @@ public class LectureController {
         //Data will be used only once, and it won't be visible.
         ra.addFlashAttribute("result", "Done!");
         
-        return "redirect:/lecture/listAll";
+        return "redirect:/listAll";
     }
 
     @RequestMapping(value="/listAll", method=RequestMethod.GET)
-    public void listAll(Model model) throws Exception{
+    public String listAll(Model model) throws Exception{
         System.out.println("/lecture/listAll Page");
         model.addAttribute("lecureList", service.listAll());
+        return "lecture/listAll";
     }
 }

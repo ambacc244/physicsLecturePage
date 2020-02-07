@@ -22,14 +22,14 @@
 <body>
     <h1>Add lecture</h1>
 
-    <form action="/lecture/lecture/create" method="POST">
+    <form action="/lecture/create" method="POST">
         <div class="tableForm">
             <label>Title</label>
             <input type="text" name="lectureTitle" class="createForm" placeholder="lecture title">
         </div>
         <div class="tableForm">
             <label>Description</label>
-            <textarea name="lectureDesc" cols="30" rows="10" placeholder="lecture desc"></textarea>
+            <textarea name="lectureDesc" cols="30" rows="10" class="createForm" placeholder="lecture desc"></textarea>
         </div>
         <div class="tableForm">
             <label>Link</label>
@@ -44,7 +44,7 @@
             <input type="date" name="lectureDate" class="createForm" placeholder="lecture Date">
         </div>
         <div class="tableForm">
-            <button type="submit" class="createForm" onclick="return checkInputIsNull();">Submit</button>
+            <button type="submit" class="submitForm" onclick="return checkInputIsNull();">Submit</button>
         </div>
     </form>
 </body>
