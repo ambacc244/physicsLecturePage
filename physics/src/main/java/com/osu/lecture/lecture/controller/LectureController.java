@@ -28,6 +28,7 @@ public class LectureController {
         System.out.println(lecture.toString());
 
         service.create(lecture);
+        //Data will be used only once, and it won't be visible.
         ra.addFlashAttribute("result", "Done!");
 
         return "redirect:/lecture/listAll";

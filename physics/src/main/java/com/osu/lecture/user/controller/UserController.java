@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.osu.lecture.HomeController;
 import com.osu.lecture.user.UserVO;
 import com.osu.lecture.user.service.UserService;
 
