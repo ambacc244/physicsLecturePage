@@ -22,6 +22,10 @@
             <label>Link</label>
             <input type="text" name="lectureLink" class="createForm" placeholder="author">
         </div>
+        <div class="createForm">
+            <label>Author Id</label>
+            <input type="text" name="lectureLink" class="createForm" placeholder="author">
+        </div>
         <div class="formFooter">
             <button type="submit" class="btn_botton">Submit</button>
         </div>
