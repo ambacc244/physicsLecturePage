@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.osu.lecture.lecture.LectureVO;
@@ -11,7 +13,7 @@ import com.osu.lecture.lecture.dao.LectureDao;
 
 @Service
 public class LectureService implements ILectureService{
-
+	private static final Logger logger = LoggerFactory.getLogger(LectureService.class);
 	@Inject
 	private LectureDao dao;
 
@@ -22,10 +24,8 @@ public class LectureService implements ILectureService{
 	}
 
 	@Override
-	public List<LectureVO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		
-		return dao.listAll();
+	public List<LectureVO> upcomingLectureList() {
+		return dao.upcomingLectureList();
 	}
 
 	@Override
