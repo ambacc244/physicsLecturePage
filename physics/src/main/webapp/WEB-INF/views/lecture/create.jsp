@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>Add Lecture</title>
 <script>
-    console.log("Refresh Test44");
     function checkInputIsNull(){
         var i = 0;
         var x = document.getElementsByClassName("createForm");
@@ -34,7 +33,7 @@
         </div>
         <div class="tableForm">
             <label>Link</label>
-            <input type="text" name="lectureLink" class="createForm" placeholder="author">
+            <input type="text" name="lectureLink" class="createForm" placeholder="Link Address">
         </div>
         <div class="tableForm">
             <label>Author Id</label>
