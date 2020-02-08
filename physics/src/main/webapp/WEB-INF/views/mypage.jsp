@@ -11,6 +11,7 @@
 	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
 	
 	<button type="submit" onclick="logout()">Logout</button>
+	<button type="submit" onclick="location.href = '/lecture/create';"">Add lecture</button>
 	<!--  
 	<h2>Add New Lecture</h2>
 	
