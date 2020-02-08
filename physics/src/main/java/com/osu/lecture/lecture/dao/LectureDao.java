@@ -5,13 +5,16 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.osu.lecture.lecture.LectureVO;
+import com.osu.lecture.user.dao.UserDao;
 
 @Repository
 public class LectureDao implements ILectureDao{
-
+	private static final Logger logger = LoggerFactory.getLogger(LectureDao.class);
 	@Inject
 	private SqlSession sqlSession;
 	
@@ -25,10 +28,15 @@ public class LectureDao implements ILectureDao{
 	}
 
 	@Override
-	public List<LectureVO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		sqlSession.selectList(namespace + ".listLecture");
-		return null;
+	public List<LectureVO> upcomingLectureList(){
+		return sqlSession.selectList(namespace +".selectUpcomingLecture");
+		//return sqlSession.selectList("LectureMapper.selectUpcomingLecture");
+	}
+	
+	@Override
+	public List<LectureVO> pastLectureList(){
+		return sqlSession.selectList(namespace + ".selectPastLecture");
+		//return sqlSession.selectList("LectureMapper.selectPastLecture");
 	}
 
 	@Override

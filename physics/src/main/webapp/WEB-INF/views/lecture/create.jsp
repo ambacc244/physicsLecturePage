@@ -9,7 +9,7 @@
 <body>
     <h1>Add lecture</h1>
 
-    <form action="/lecture/lecture/create" method="POST">
+    <form action="${path}/lecture/create" method="POST">
         <div class="createForm">
             <label>Title</label>
             <input type="text" name="lectureTitle" class="createForm" placeholder="lecture title">

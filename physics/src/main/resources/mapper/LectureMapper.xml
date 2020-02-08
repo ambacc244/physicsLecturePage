@@ -7,8 +7,18 @@
         INSERT INTO lecture (title, description, link, date, instructor_id) VALUES (#{lectureTitle}, #{lectureDesc}, #{lectureLink},SYSDATE(), #{instructorId})
     </insert>
     
-    <select id="listLecture" resultType="com.osu.lecture.lecture.LectureVO">
-    	<![CDATA[ SELECT * FROM lecture ORDER BY id DESC; ]]>
+    <select id="selectUpcomingLecture" resultType="com.osu.lecture.lecture.LectureVO">
+    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, instructor_id AS instructorId FROM lecture 
+    	WHERE date >= DATE(NOW())
+    	ORDER BY date ASC
+    </select>
+    
+    <select id="selectPastLecture" resultType="com.osu.lecture.lecture.LectureVO">
+    	<![CDATA[
+    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, instructor_id AS instructorId FROM lecture 
+    	WHERE date < DATE(NOW())
+    	ORDER BY date DESC
+    	 ]]>
     </select>
     
     <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO">
