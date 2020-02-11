@@ -25,7 +25,6 @@ public class UserService implements IUserService {
 		//if id and password exist
 		if(result) {
 			UserVO user2 = userDao.viewUser(user);
-			logger.info("3");
 			session.setAttribute("userId", user2.getUserId());
 			session.setAttribute("userPw", user2.getUserPw());
 		}

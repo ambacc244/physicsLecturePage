@@ -27,18 +27,17 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView loginCheck(@ModelAttribute UserVO user, HttpSession session) {	
+	public String loginCheck(@ModelAttribute UserVO user, HttpSession session) {	
 		boolean result = userService.loginCheck(user, session);
-		ModelAndView mav =  new ModelAndView();
+	//	ModelAndView mav =  new ModelAndView();
 		if(result == true) {
-			logger.info("Welcome mypage!");
-			mav.setViewName("mypage");
+			logger.info("Here is mypage");
+			//mav.setViewName("mypage");
+			return "redirect:/mypage";
 		}
-		else {
-			logger.info("Welcome login!");
-			mav.setViewName("login");
-		}
-		return mav;
+		logger.info("Here is login");
+		//mav.setViewName("login");
+		return "redirect:/login";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -52,8 +51,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.POST)
-	public void register(@ModelAttribute UserVO user) throws Exception{
+	public void register(@ModelAttribute UserVO user) throws Exception {
 		userService.register(user);
 	}
+	
+	@RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)
+    public String addLecture() {
+		logger.info("Here is add new lecture page");
+    	return "addLecture"; 
+    }
+    
 
 }
