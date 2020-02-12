@@ -1,6 +1,8 @@
 package com.osu.lecture.user.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -22,36 +24,35 @@ public class UserController {
 	UserService userService;
 	//login page
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login() {
-	//	if(userService.)
-		//	return "redirect:/mypage";
+	public String login(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("userId") != null)
+			return "redirect:/mypage";   // if already logged in, direct to my page
 		return "login";  //return login.jsp page 
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String loginCheck(@ModelAttribute UserVO user, HttpSession session) {	
 		boolean result = userService.loginCheck(user, session);
-	//	ModelAndView mav =  new ModelAndView();
-		if(result == true) {
-			logger.info("Here is mypage");
-			//mav.setViewName("mypage");
-			return "redirect:/mypage";
-		}
-		logger.info("Here is login");
-		//mav.setViewName("login");
-		return "redirect:/login";
+
+		if(result == true) 
+			return "redirect:/mypage";  //if successfully logged in, direct to my page
+		return "login";  //if fail to login, direct to login page
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
-		userService.logout(session);
+		userService.logout(session); 
 		return "redirect:/";  //return main page
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage(HttpSession session) {
-		if(session == null)
-			return "redirect:/login"; 
+	public String mypage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("userId") == null)
+			return "redirect:/login";  // if not logged in, direct to login page
 		return "mypage";  //return mypage.jsp page 
 	}
 	
@@ -59,5 +60,4 @@ public class UserController {
 	public void register(@ModelAttribute UserVO user) throws Exception {
 		userService.register(user);
 	}
-
 }
