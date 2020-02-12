@@ -52,7 +52,11 @@ public class LectureController {
         return "past";
     }
     
-    
+    @RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)
+    public String addLecture() {
+		logger.info("Here is add new lecture page");
+    	return "addLecture"; 
+    }
     
     
     

@@ -23,6 +23,8 @@ public class UserController {
 	//login page
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
+	//	if(userService.)
+		//	return "redirect:/mypage";
 		return "login";  //return login.jsp page 
 	}
 	
@@ -41,12 +43,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout() {
+	public String logout(HttpSession session) {
+		userService.logout(session);
 		return "redirect:/";  //return main page
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage() {
+	public String mypage(HttpSession session) {
+		if(session == null)
+			return "redirect:/login"; 
 		return "mypage";  //return mypage.jsp page 
 	}
 	
@@ -54,12 +59,5 @@ public class UserController {
 	public void register(@ModelAttribute UserVO user) throws Exception {
 		userService.register(user);
 	}
-	
-	@RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)
-    public String addLecture() {
-		logger.info("Here is add new lecture page");
-    	return "addLecture"; 
-    }
-    
 
 }

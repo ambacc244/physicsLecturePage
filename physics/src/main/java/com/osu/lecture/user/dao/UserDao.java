@@ -29,7 +29,6 @@ public class UserDao implements IUserDao {
 	
 	@Override
 	public void logout(HttpSession session) {
-		//not completed
 	}
 	
 	@Override

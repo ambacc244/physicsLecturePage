@@ -35,4 +35,9 @@ public class UserService implements IUserService {
 	public void register(UserVO user) throws Exception {
 		userDao.register(user);
 	}
+
+	public void logout(HttpSession session) {
+		session.invalidate();
+		
+	}
 }

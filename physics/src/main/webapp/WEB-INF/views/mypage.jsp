@@ -10,7 +10,7 @@
 <body>
 	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
 	
-	<button type="submit" onclick="logout()">Logout</button>
+	<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
 	<button onclick="window.location.href='${path}/lecture/mypage/addLecture'">Add Lecture</button>
 	
 	<h2>Register</h2>
