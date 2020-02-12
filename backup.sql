@@ -12,7 +12,7 @@ create table user (
 create table lecture (
     id int primary key auto_increment, 
     title varchar(20) not null, 
-    description text no null,
+    description text not null,
     link text not null, 
     date datetime not null, 
     instructor_id int not null
