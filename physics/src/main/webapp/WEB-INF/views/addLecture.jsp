@@ -7,6 +7,7 @@
 <title>Add New Lecture Page</title>
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
 	<h2>Add New Lecture</h2>
 	<!--  
 	<form name="addLectureForm" action="${path}/lecture/mypage" method="post">

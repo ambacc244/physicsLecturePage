@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login Page</title>
-<script src="resources/js/login.js"></script>
+<title>Register</title>
+<script src="resources/js/register.js"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
-	<h1>Login</h1>
+	<h2>Register</h2>
 	
-	<form name="loginForm" action="${path}/lecture/login" method="post">
+	<form name="registerForm" action="${path}/lecture/mypage/register" method="post">
 		ID : <input type="text" name="userId"><br>
 		PW : <input type="password" name="userPw"><br>
-		<button type="submit" onclick="login()">Login</button>
+		<button type="submit" onclick="register()">Register</button>
 	</form>
 </body>
 </html>

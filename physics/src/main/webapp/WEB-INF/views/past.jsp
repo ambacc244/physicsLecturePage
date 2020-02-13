@@ -8,6 +8,7 @@
 <title>Past Lecture Page</title>
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
 	<h1>Past Lecture Page</h1>
 
 	 <div class="pastLectureContainer">
@@ -17,9 +18,6 @@
 		        	<h2 class="pastLectureTitle"> Title : ${row.lectureTitle} </h2>
 		        </div>
 				<div class="pastLectureContents">
-					<div class="pastLectureVideo">
-						<iframe width=100% src="${row.lectureLink}"></iframe>
-					</div>
 					<h3 class="pastLectureDate"> Date : ${row.lectureDate} </h3>
 				</div>
 			</div>

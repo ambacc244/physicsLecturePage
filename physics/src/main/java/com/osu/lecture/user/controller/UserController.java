@@ -56,8 +56,18 @@ public class UserController {
 		return "mypage";  //return mypage.jsp page 
 	}
 	
-	@RequestMapping(value = "/mypage", method = RequestMethod.POST)
-	public void register(@ModelAttribute UserVO user) throws Exception {
+	@RequestMapping(value = "/mypage/register", method = RequestMethod.GET)
+	public String register(HttpServletRequest request) throws Exception {
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("userId") == null)
+			return "redirect:/login";  // if not logged in, direct to login page
+		return "register";  //return register.jsp page 
+	}
+	
+	@RequestMapping(value = "/mypage/register", method = RequestMethod.POST)
+	public String registerUser(@ModelAttribute UserVO user) throws Exception {
 		userService.register(user);
+		return "register";  //return register.jsp page 
 	}
 }

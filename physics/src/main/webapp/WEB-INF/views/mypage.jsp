@@ -5,20 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>My Page</title>
-<script src="resources/js/mypage.js"></script>
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
 	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
 	
 	<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
 	<button onclick="window.location.href='${path}/lecture/mypage/addLecture'">Add Lecture</button>
+	<button onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
 	
-	<h2>Register</h2>
-	
-	<form name="registerForm" action="${path}/lecture/mypage" method="post">
-		ID : <input type="text" name="userId"><br>
-		PW : <input type="password" name="userPw"><br>
-		<button type="submit" onclick="register()">Register</button>
-	</form>
 </body>
 </html>

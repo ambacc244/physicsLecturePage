@@ -8,6 +8,7 @@
 <title>Main Page (= Upcoming Lecture Page)</title>
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
 	<h1>Upcoming Lecture Page</h1>
 
 	 <div class="upcommingLectureContainer">
@@ -17,9 +18,6 @@
 		        	<h2 class="upcommingLectureTitle"> Title : ${row.lectureTitle} </h2>
 		        </div>
 				<div class="upcommingLectureContents">
-					<div class="upcommingLectureVideo">
-						<iframe width=100% src="${row.lectureLink}"></iframe>
-					</div>
 					<h3 class="upcommingLectureDate"> Date : ${row.lectureDate} </h3>
 				</div>
 			</div>
