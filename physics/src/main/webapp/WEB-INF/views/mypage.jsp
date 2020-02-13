@@ -9,8 +9,9 @@
 <body>
 <%@ include file="partials/header.jsp" %>
 	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
-	
+	<!--  
 	<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
+	-->
 	<button onclick="window.location.href='${path}/lecture/mypage/addLecture'">Add Lecture</button>
 	<button onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
 	
