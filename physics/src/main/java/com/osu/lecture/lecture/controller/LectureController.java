@@ -21,13 +21,13 @@ public class LectureController {
     @Inject
     private LectureService service;
 
-    @RequestMapping(value="/create", method=RequestMethod.GET)
+    @RequestMapping(value="/mypage/add", method=RequestMethod.GET)
     public String createGET(LectureVO lecture, Model model) throws Exception{
         System.out.println("creat. GET");
         return "lecture/create"; 
     }
 
-    @RequestMapping(value="/create", method=RequestMethod.POST)
+    @RequestMapping(value="/mypage/add", method=RequestMethod.POST)
     public String createPOST(LectureVO lecture, RedirectAttributes ra) throws Exception{
         System.out.println("create. POST");
         System.out.println(lecture.toString());
@@ -35,7 +35,7 @@ public class LectureController {
         service.create(lecture);
         ra.addFlashAttribute("result", "Done!");
 
-        return "redirect:/listAll";
+        return "redirect:/mypage";
     }
     
     @RequestMapping(value="/", method=RequestMethod.GET)

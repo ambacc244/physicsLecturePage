@@ -22,7 +22,7 @@
 <body>
     <h1>Add lecture</h1>
 
-    <form action="${path}/lecture/create" method="POST">
+    <form action="${path}/lecture/mypage/add" method="POST">
        <div class="tableForm">
             <label>Title</label>
             <input type="text" name="lectureTitle" class="createForm" placeholder="lecture title">
