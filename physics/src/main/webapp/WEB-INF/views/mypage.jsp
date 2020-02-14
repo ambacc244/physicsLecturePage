@@ -13,6 +13,7 @@
 	<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
 	-->
 	<button onclick="window.location.href='${path}/lecture/mypage/addLecture'">Add Lecture</button>
+	<button type="submit" onclick="location.href = '/lecture/create';"">Add lecture</button>
 	<button onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
 	
 </body>

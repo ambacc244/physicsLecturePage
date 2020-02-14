@@ -56,11 +56,6 @@ public class LectureController {
     public String addLecture() {
 		logger.info("Here is add new lecture page");
     	return "addLecture"; 
-    }
-    
-    
-    
-    
-    
+    } 
     
 }
