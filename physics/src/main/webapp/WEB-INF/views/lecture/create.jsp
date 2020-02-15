@@ -41,7 +41,7 @@
         </div>
         <div class="tableForm">
             <label>Date</label>
-            <input type="date" name="lectureDate" class="createForm" placeholder="lecture Date">
+            <input type="datetime-local" name="lectureDate" class="createForm" placeholder="lecture Date">
         </div>
         <div class="tableForm">
             <button type="submit" class="submitForm" onclick="return checkInputIsNull();">Submit</button>
