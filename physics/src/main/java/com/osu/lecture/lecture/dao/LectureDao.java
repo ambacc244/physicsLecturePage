@@ -30,13 +30,15 @@ public class LectureDao implements ILectureDao{
 	@Override
 	public List<LectureVO> upcomingLectureList(){
 		return sqlSession.selectList(namespace +".selectUpcomingLecture");
-		//return sqlSession.selectList("LectureMapper.selectUpcomingLecture");
 	}
 	
 	@Override
 	public List<LectureVO> pastLectureList(){
 		return sqlSession.selectList(namespace + ".selectPastLecture");
-		//return sqlSession.selectList("LectureMapper.selectPastLecture");
+	}
+	
+	public List<LectureVO> myLectureList(Object object){
+		return sqlSession.selectList(namespace + ".selectMyLecture");
 	}
 
 	@Override

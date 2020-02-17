@@ -1,5 +1,7 @@
 package com.osu.lecture.user.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,11 +10,14 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.osu.lecture.lecture.LectureVO;
+import com.osu.lecture.lecture.service.LectureService;
 import com.osu.lecture.user.UserVO;
 import com.osu.lecture.user.service.UserService;
 
@@ -22,6 +27,8 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Inject
 	UserService userService;
+	LectureService lectureService;
+	
 	//login page
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(HttpServletRequest request) {
@@ -48,11 +55,16 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage(HttpServletRequest request) {
+	public String mypage(HttpServletRequest request, Model model) {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("userId") == null)
 			return "redirect:/login";  // if not logged in, direct to login page
+		
+		/**
+		List<LectureVO> list = lectureService.myLectureList(session.getAttribute("userId"));
+    	model.addAttribute("list", list);
+    	**/
 		return "mypage";  //return mypage.jsp page 
 	}
 	

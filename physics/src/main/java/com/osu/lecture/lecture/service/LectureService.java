@@ -34,6 +34,11 @@ public class LectureService implements ILectureService{
 	}
 
 	@Override
+	public List<LectureVO> myLectureList(Object object) {
+		return dao.myLectureList(object);
+	}
+	
+	@Override
 	public LectureVO read(int lectureId) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.read(lectureId);

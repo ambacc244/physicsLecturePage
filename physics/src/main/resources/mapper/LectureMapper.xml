@@ -20,6 +20,14 @@
     	ORDER BY date DESC
     	 ]]>
     </select>
+  	
+    <select id="selectMyLecture" parameterType="int" resultType="com.osu.lecture.lecture.LectureVO">
+    	<![CDATA[
+    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, instructor_id AS instructorId FROM lecture 
+    	WHERE instructor_id = #{id}
+    	ORDER BY date DESC
+    	]]>
+    </select>
     
     <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO">
     	SELECT * FROM lecture WHERE lectureId = #{lectureId}

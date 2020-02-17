@@ -4,20 +4,48 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add New Lecture Page</title>
+<title>Add Lecture Page</title>
+<script>
+    function checkInputIsNull(){
+        var i = 0;
+        var x = document.getElementsByClassName("createForm");
+        for(;i < x.length; i++){
+            if( x[i].value === ''){
+                alert("You should write something");
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
 </head>
 <body>
-<%@ include file="partials/header.jsp" %>
-	<h2>Add New Lecture</h2>
-	<!--  
-	<form name="addLectureForm" action="${path}/lecture/mypage" method="post">
-		Title : <input type="text" name="title"><br>
-		Description : <input type="text" name="description"><br>
-		Link : <input type="text" name="link"><br>
-		Date : <input type="datetime-local" name="date"><br>
-		<button type="submit" onclick="register()">Register</button>
-	</form>
--->
+    <h1>Add lecture</h1>
 
+    <form action="${path}/lecture/create" method="POST">
+       <div class="tableForm">
+            <label>Title</label>
+            <input type="text" name="lectureTitle" class="createForm" placeholder="lecture title">
+        </div>
+        <div class="tableForm">
+            <label>Description</label>
+            <textarea name="lectureDesc" cols="30" rows="10" class="createForm" placeholder="lecture desc"></textarea>
+        </div>
+        <div class="tableForm">
+            <label>Link</label>
+            <input type="text" name="lectureLink" class="createForm" placeholder="Link Address">
+        </div>
+        <div class="tableForm">
+            <label>Author Id</label>
+            <input type="text" name="instructorId" class="createForm" placeholder="이건 나중에지울거야!">
+        </div>
+        <div class="tableForm">
+            <label>Date</label>
+            <input type="date" name="lectureDate" class="createForm" placeholder="lecture Date">
+        </div>
+        <div class="tableForm">
+            <button type="submit" class="submitForm" onclick="return checkInputIsNull();">Submit</button>
+        </div>
+    </form>
 </body>
 </html>
