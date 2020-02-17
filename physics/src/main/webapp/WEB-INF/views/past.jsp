@@ -19,7 +19,7 @@
 		        </div>
 				<div class="pastLectureContents">
 					<h3 class="pastLectureDate"> Date : ${row.lectureDate} </h3>
-					<h3 class="upcommingLectureDate"> Date : ${row.lectureTime} </h3>
+					<h3 class="upcommingLectureDate"> Time : ${row.lectureTime} </h3>
 				</div>
 			</div>
 	    </c:forEach>
