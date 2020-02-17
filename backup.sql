@@ -21,5 +21,5 @@ create table lecture (
 
 --TO ADD time and CHANGE date column to DATE from datetime
 ALTER TABLE `lecture`.`lecture` 
-    ADD COLUMN `times` TIME NOT NULL AFTER `date`,
+    ADD COLUMN `time` TIME NOT NULL AFTER `date`,
     CHANGE COLUMN `date` `date` DATE NOT NULL;
