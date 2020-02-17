@@ -24,7 +24,7 @@ public class LectureController {
     @RequestMapping(value="/mypage/add", method=RequestMethod.GET)
     public String createGET(LectureVO lecture, Model model) throws Exception{
         System.out.println("creat. GET");
-        return "lecture/create"; 
+        return "create"; 
     }
 
     @RequestMapping(value="/mypage/add", method=RequestMethod.POST)
