@@ -4,11 +4,11 @@
 <mapper namespace="LectureMapper">
  
     <insert id="insertLecture">
-        INSERT INTO lecture (title, description, link, date, instructor_id) VALUES (#{lectureTitle}, #{lectureDesc}, #{lectureLink}, #{lectureDate}, #{instructorId})
+        INSERT INTO lecture (title, description, link, date, time, instructor_id) VALUES (#{lectureTitle}, #{lectureDesc}, #{lectureLink}, #{lectureDate}, #{lectureTime}, #{instructorId})
     </insert>
     
     <select id="selectUpcomingLecture" resultType="com.osu.lecture.lecture.LectureVO">
-    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, instructor_id AS instructorId FROM lecture 
+    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture 
     	WHERE date >= DATE(NOW())
     	ORDER BY date ASC
     </select>

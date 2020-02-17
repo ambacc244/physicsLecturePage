@@ -8,7 +8,8 @@ public class LectureVO {
 	private String lectureTitle;
     private String lectureDesc;
     private String lectureLink;
-    private Date lectureDate;
+	private Date lectureDate;
+	private String lectureTime;
     private int instructorId;
 
     public LectureVO(){}
@@ -51,6 +52,14 @@ public class LectureVO {
 
 	public void setLectureDate(Date lectureDate) {
 		this.lectureDate = lectureDate;
+	}
+
+	public String getLectureTime() {
+		return lectureTime;
+	}
+
+	public void setLectureTime(String lectureTime) {
+		this.lectureTime = lectureTime;
 	}
 
 	public int getInstructorId() {
