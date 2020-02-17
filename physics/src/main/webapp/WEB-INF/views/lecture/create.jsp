@@ -40,8 +40,12 @@
             <input type="text" name="instructorId" class="createForm" placeholder="이건 나중에지울거야!">
         </div>
         <div class="tableForm">
-            <label>Date</label>
-            <input type="datetime-local" name="lectureDate" class="createForm" placeholder="lecture Date">
+            <label>Dates</label>
+            <input type="date" name="lectureDate" class="createForm" placeholder="lecture Date">
+        </div>
+        <div class="tableForm">
+            <label>Time</label>
+            <input type="time" name="lectureTime" class="createForm" placeholder="lecture time">
         </div>
         <div class="tableForm">
             <button type="submit" class="submitForm" onclick="return checkInputIsNull();">Submit</button>
