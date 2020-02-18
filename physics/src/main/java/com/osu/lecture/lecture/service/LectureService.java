@@ -14,44 +14,44 @@ import com.osu.lecture.lecture.dao.LectureDao;
 public class LectureService implements ILectureService{
 	private static final Logger logger = LoggerFactory.getLogger(LectureService.class);
 	@Inject
-	private LectureDao dao;
+	private LectureDao lectureDao;
 
 	@Override
 	public void create(LectureVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		dao.create(vo);	
+		lectureDao.create(vo);	
 	}
 
 	@Override
 	public List<LectureVO> upcomingLectureList() {
-		return dao.upcomingLectureList();
+		return lectureDao.upcomingLectureList();
 	}
 	
 	@Override
 	public List<LectureVO> pastLectureList() {
-		return dao.pastLectureList();
+		return lectureDao.pastLectureList();
 	}
 
 	@Override
 	public List<LectureVO> myLectureList(String userId) throws Exception {
-		return dao.myLectureList(userId);
+		return lectureDao.myLectureList(userId);
 	}
 	
 	@Override
 	public LectureVO read(int lectureId) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.read(lectureId);
+		return lectureDao.read(lectureId);
 	}
 
 	@Override
 	public void delete(int lectureId) throws Exception {
 		// TODO Auto-generated method stub
-		dao.delete(lectureId);
+		lectureDao.delete(lectureId);
 	}
 
 	@Override
 	public void update(int lectureId) throws Exception {
 		// TODO Auto-generated method stub
-		dao.update(lectureId);
+		lectureDao.update(lectureId);
 	}
 }
