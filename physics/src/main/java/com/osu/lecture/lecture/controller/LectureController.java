@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -55,9 +56,12 @@ public class LectureController {
     }
 
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public void detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception{
+    public ModelAndView detailLecture(@RequestParam("lectureId") int lectureId) throws Exception{
 		System.out.println("Lecture page" + lectureId + " is being called");
-    	model.addAttribute(service.read(lectureId)); 
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("lectureview");
+        mav.addObject("detail", service.read(lectureId));
+        return mav;
     } 
     
     @RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)

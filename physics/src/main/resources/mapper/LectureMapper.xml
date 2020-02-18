@@ -22,11 +22,11 @@
     </select>
     
     <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO">
-    	SELECT * FROM lecture WHERE lectureId = #{lectureId}
+    	SELECT * FROM lecture WHERE id = #{lectureId}
     </select>
  
     <delete id="deleteLecture">
-        DELETE FROM lecture WHERE lectureId = #{lectureId}
+        DELETE FROM lecture WHERE id = #{lectureId}
     </delete>
     
     <update id="updateLecture">
