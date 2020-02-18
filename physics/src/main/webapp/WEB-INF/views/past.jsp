@@ -9,13 +9,13 @@
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
-	<h1>Past Lecture Page</h1>
+	<h1>Past Lecture Page!</h1>
 
 	 <div class="pastLectureContainer">
 	 	<c:forEach var="row" items="${list}">
 		 	<div class="pastLecture" style="list-style-type:none">
 		        <div class="pastLectureHeader">
-		        	<h2 class="pastLectureTitle"> Title : ${row.lectureTitle} </h2>
+		        	<h2 class="pastLectureTitle"><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </h2>
 		        </div>
 				<div class="pastLectureContents">
 					<h3 class="pastLectureDate"> Date : ${row.lectureDate} </h3>

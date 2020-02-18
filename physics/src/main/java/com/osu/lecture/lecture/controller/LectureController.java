@@ -3,6 +3,7 @@ package com.osu.lecture.lecture.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.sound.sampled.SourceDataLine;
 
 import com.osu.lecture.lecture.service.LectureService;
 import com.osu.lecture.lecture.LectureVO;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -51,6 +53,12 @@ public class LectureController {
     	model.addAttribute("list", list);
         return "past";
     }
+
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    public void detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception{
+		System.out.println("Lecture page" + lectureId + " is being called");
+    	model.addAttribute(service.read(lectureId)); 
+    } 
     
     @RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)
     public String addLecture() {
