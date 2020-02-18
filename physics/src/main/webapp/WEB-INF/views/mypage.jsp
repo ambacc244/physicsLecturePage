@@ -8,6 +8,7 @@
 <title>My Page</title>
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
 	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
 
 	<button onclick="location.href = '/lecture/mypage/add'">Add lecture</button>
@@ -17,19 +18,21 @@
 		<tr>
 		    <th>Title</th>
 		    <th>Date</th>
-		    <th>>Edit</th>
+		    <th>Time</th>
+		    <th>Edit</th>
 		    <th>Delete</th>
 		</tr>
-		<!-- 
+		
 	 	<c:forEach var="row" items="${list}">
 		 	<tr>
 		    	<th>${row.lectureTitle}</th>
 		    	<th>${row.lectureDate}</th>
+		    	<th>${row.lectureTime}</th>
 		    	<th><button>Edit</button></th>
 		    	<th><button>Delete</button></th>
 		    </tr>
 	    </c:forEach>
-	     -->
+	    
 	</table>
 	
 </body>

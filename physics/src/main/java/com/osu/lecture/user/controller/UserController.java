@@ -1,10 +1,10 @@
 package com.osu.lecture.user.controller;
 
+
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -14,7 +14,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.osu.lecture.lecture.LectureVO;
 import com.osu.lecture.lecture.service.LectureService;
@@ -27,6 +26,7 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Inject
 	UserService userService;
+	@Inject
 	LectureService lectureService;
 	
 	//login page
@@ -55,16 +55,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage(HttpServletRequest request, Model model) {
+	public String mypage(HttpServletRequest request, Model model) throws Exception {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("userId") == null)
 			return "redirect:/login";  // if not logged in, direct to login page
-		
-		/**
-		List<LectureVO> list = lectureService.myLectureList(session.getAttribute("userId"));
+
+		List<LectureVO> list = lectureService.myLectureList((String) session.getAttribute("userId"));  //send user id to mapper
     	model.addAttribute("list", list);
-    	**/
+    	
 		return "mypage";  //return mypage.jsp page 
 	}
 	

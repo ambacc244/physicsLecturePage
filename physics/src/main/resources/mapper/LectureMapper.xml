@@ -23,16 +23,17 @@
     	]]>
     </select>
   	
-    <select id="selectMyLecture" parameterType="int" resultType="com.osu.lecture.lecture.LectureVO">
+    <select id="selectMyLecture" parameterType="String" resultType="com.osu.lecture.lecture.LectureVO">
     	<![CDATA[
-    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture 
-    	WHERE instructor_id = #{id}
+    	SELECT lecture.id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture 
+    	LEFT JOIN user ON lecture.instructor_id = user.id
+    	WHERE user.user_id = #{userId}
     	ORDER BY date DESC
     	]]>
     </select>
     
     <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO">
-    	SELECT * FROM lecture WHERE lectureId = #{lectureId}
+    	SELECT * FROM lecture;
     </select>
  
     <delete id="deleteLecture">

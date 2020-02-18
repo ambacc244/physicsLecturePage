@@ -1,7 +1,6 @@
 package com.osu.lecture.lecture.dao;
 
 import java.util.List;
-
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -10,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.osu.lecture.lecture.LectureVO;
-import com.osu.lecture.user.dao.UserDao;
 
 @Repository
 public class LectureDao implements ILectureDao{
@@ -37,8 +35,9 @@ public class LectureDao implements ILectureDao{
 		return sqlSession.selectList(namespace + ".selectPastLecture");
 	}
 	
-	public List<LectureVO> myLectureList(Object object){
-		return sqlSession.selectList(namespace + ".selectMyLecture");
+	@Override
+	public List<LectureVO> myLectureList(String userId) throws Exception {
+		return sqlSession.selectList(namespace + ".selectMyLecture", userId);
 	}
 
 	@Override

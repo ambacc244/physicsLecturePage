@@ -1,7 +1,6 @@
 package com.osu.lecture.lecture.service;
 
 import java.util.List;
-
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -34,8 +33,8 @@ public class LectureService implements ILectureService{
 	}
 
 	@Override
-	public List<LectureVO> myLectureList(Object object) {
-		return dao.myLectureList(object);
+	public List<LectureVO> myLectureList(String userId) throws Exception {
+		return dao.myLectureList(userId);
 	}
 	
 	@Override
