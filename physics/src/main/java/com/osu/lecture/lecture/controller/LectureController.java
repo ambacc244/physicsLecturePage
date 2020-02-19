@@ -60,7 +60,7 @@ public class LectureController {
 	  public String detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception {
 		  System.out.println("Lecture page" + lectureId + " is being called");
 		  //System.out.println(service.read(lectureId));
-	      model.addAttribute("lecture", lectureService.read(lectureId));
+	      model.addAttribute("lecture", lectureService.selectLecture(lectureId));
 	      return "lectureview";
 	  } 
 
@@ -73,7 +73,7 @@ public class LectureController {
     
     @RequestMapping(value = "/mypage/edit/{lectureId}", method = RequestMethod.GET)
     public String editLecture(@PathVariable String lectureId) throws Exception {
-        
+    	lectureService.selectLecture(Integer.parseInt(lectureId));
         return "editLecture"; 
     }
     

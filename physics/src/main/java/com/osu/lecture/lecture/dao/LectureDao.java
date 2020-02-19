@@ -41,7 +41,7 @@ public class LectureDao implements ILectureDao{
 	}
 
 	@Override
-	public LectureVO read(int lectureId) throws Exception {
+	public LectureVO selectLecture(int lectureId) throws Exception {
 		return sqlSession.selectOne(namespace + ".detailLecture", lectureId);
 	}
 
@@ -54,4 +54,5 @@ public class LectureDao implements ILectureDao{
 	public void updateLecture(int lectureId) throws Exception {
 		sqlSession.selectOne(namespace + ".updateLecture", lectureId);
 	}
+
 }

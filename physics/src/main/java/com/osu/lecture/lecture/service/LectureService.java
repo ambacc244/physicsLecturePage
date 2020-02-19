@@ -38,9 +38,8 @@ public class LectureService implements ILectureService{
 	}
 	
 	@Override
-	public LectureVO read(int lectureId) throws Exception {
-		// TODO Auto-generated method stub
-		return lectureDao.read(lectureId);
+	public LectureVO selectLecture(int lectureId) throws Exception {
+		return lectureDao.selectLecture(lectureId);
 	}
 
 	@Override
