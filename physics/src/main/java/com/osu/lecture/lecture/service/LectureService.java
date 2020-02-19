@@ -44,14 +44,12 @@ public class LectureService implements ILectureService{
 	}
 
 	@Override
-	public void delete(int lectureId) throws Exception {
-		// TODO Auto-generated method stub
-		lectureDao.delete(lectureId);
+	public void deleteLecture(int lectureId) throws Exception {
+		lectureDao.deleteLecture(lectureId);
 	}
 
 	@Override
-	public void update(int lectureId) throws Exception {
-		// TODO Auto-generated method stub
-		lectureDao.update(lectureId);
+	public void updateLecture(int lectureId) throws Exception {
+		lectureDao.updateLecture(lectureId);
 	}
 }

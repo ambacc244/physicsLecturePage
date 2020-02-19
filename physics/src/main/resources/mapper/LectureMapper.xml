@@ -36,12 +36,12 @@
     	SELECT * FROM lecture;
     </select>
  
-    <delete id="deleteLecture">
+    <delete id="deleteLecture" parameterType="int">
         DELETE FROM lecture WHERE lectureId = #{lectureId}
     </delete>
     
-    <update id="updateLecture">
-        UPDATE lecture SET lectureTitle = #{lectureTitle}
+    <update id="updateLecture" parameterType="int">
+        UPDATE lecture SET lectureTitle = #{lectureTitle} WHERE lectureId = #{lectureId}xw
     </update>
 
 </mapper>

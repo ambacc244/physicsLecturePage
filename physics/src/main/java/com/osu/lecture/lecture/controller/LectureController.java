@@ -52,10 +52,10 @@ public class LectureController {
         return "past";
     }
     
-    @RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)
-    public String addLecture() {
-		logger.info("Here is add new lecture page");
-    	return "addLecture"; 
+    @RequestMapping(value = "/mypage/delete", method = RequestMethod.GET)
+    public String deleteLecture(int lectureId) throws Exception {
+    	lectureService.deleteLecture(lectureId);
+    	return "mypage"; 
     } 
     
 }
