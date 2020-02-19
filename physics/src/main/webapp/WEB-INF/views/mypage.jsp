@@ -28,7 +28,7 @@
 		 	<tr>
 		    	<th>${row.lectureTitle}</th>
 		    	<th>${row.lectureDate}</th>
-		    	<th>${row.lectureTime}</th>
+		    	<th>${row.lectureTime}</th>   
 		    	<th><button onclick="window.location.href='${path}/lecture/mypage/edit/${row.lectureId}'">Edit</button></th>
 		    	<th><button onclick="deleteLecture(${row.lectureId})">Delete</button></th>
 		    </tr>

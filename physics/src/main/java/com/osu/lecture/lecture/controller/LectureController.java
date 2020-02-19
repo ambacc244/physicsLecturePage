@@ -72,8 +72,9 @@ public class LectureController {
     
     
     @RequestMapping(value = "/mypage/edit/{lectureId}", method = RequestMethod.GET)
-    public String editLecture(@PathVariable String lectureId) throws Exception {
-    	lectureService.selectLecture(Integer.parseInt(lectureId));
+    public String editLecture(@PathVariable String lectureId, Model model) throws Exception {
+    //	lectureService.selectLecture(Integer.parseInt(lectureId));
+    	model.addAttribute("lecture", lectureService.selectLecture(Integer.parseInt(lectureId)));
         return "editLecture"; 
     }
     
