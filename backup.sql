@@ -17,3 +17,9 @@ create table lecture (
     date datetime not null, 
     instructor_id int not null
     ) ENGINE=INNODB;
+
+
+--TO ADD time and CHANGE date column to DATE from datetime
+ALTER TABLE `lecture`.`lecture` 
+    ADD COLUMN `time` TIME NOT NULL AFTER `date`,
+    CHANGE COLUMN `date` `date` DATE NOT NULL;

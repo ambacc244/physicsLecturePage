@@ -22,12 +22,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class LectureController {
 	private static final Logger logger = LoggerFactory.getLogger(LectureController.class);
     @Inject
-    private LectureService service;
+    private LectureService lectureService;
 
     @RequestMapping(value="/mypage/add", method=RequestMethod.GET)
     public String createGET(LectureVO lecture, Model model) throws Exception{
         System.out.println("creat. GET");
-        return "lecture/create"; 
+        return "create"; 
     }
 
     @RequestMapping(value="/mypage/add", method=RequestMethod.POST)
@@ -35,7 +35,7 @@ public class LectureController {
         System.out.println("create. POST");
         System.out.println(lecture.toString());
 
-        service.create(lecture);
+        lectureService.create(lecture);
         ra.addFlashAttribute("result", "Done!");
 
         return "redirect:/mypage";
@@ -43,14 +43,14 @@ public class LectureController {
     
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String home(Model model){
-    	List<LectureVO> list = service.upcomingLectureList();
+    	List<LectureVO> list = lectureService.upcomingLectureList();
     	model.addAttribute("list", list);
         return "upcoming";
     }
     
     @RequestMapping(value="/past", method=RequestMethod.GET)
     public String past(Model model){
-    	List<LectureVO> list = service.pastLectureList();
+    	List<LectureVO> list = lectureService.pastLectureList();
     	model.addAttribute("list", list);
         return "past";
     }

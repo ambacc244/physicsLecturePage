@@ -8,19 +8,30 @@
     </insert>
     
     <select id="selectUpcomingLecture" resultType="com.osu.lecture.lecture.LectureVO">
+    	<![CDATA[
     	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture 
     	WHERE date >= DATE(NOW())
     	ORDER BY date ASC
+    	]]>
     </select>
     
     <select id="selectPastLecture" resultType="com.osu.lecture.lecture.LectureVO">
     	<![CDATA[
-    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, instructor_id AS instructorId FROM lecture 
+    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture 
     	WHERE date < DATE(NOW())
     	ORDER BY date DESC
-    	 ]]>
+    	]]>
     </select>
-    
+  	
+    <select id="selectMyLecture" parameterType="String" resultType="com.osu.lecture.lecture.LectureVO">
+    	<![CDATA[
+    	SELECT lecture.id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture 
+    	LEFT JOIN user ON lecture.instructor_id = user.id
+    	WHERE user.user_id = #{userId}
+    	ORDER BY date DESC
+    	]]>
+    </select>
+  
     <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO" >
     	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture WHERE id = #{lectureId}
     </select>

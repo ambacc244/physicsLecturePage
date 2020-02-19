@@ -20,6 +20,7 @@
 </script>
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
     <h1>Add lecture</h1>
 
     <form action="${path}/lecture/mypage/add" method="POST">

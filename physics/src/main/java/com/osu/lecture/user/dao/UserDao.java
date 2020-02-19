@@ -16,19 +16,21 @@ public class UserDao implements IUserDao {
 	@Inject 
 	SqlSession sqlSession;
 	
+	private static final String namespace = "UserMapper";
+	
 	@Override 
 	public boolean loginCheck(UserVO user) {
-		String sql = sqlSession.selectOne("User.loginCheck", user);
+		String sql = sqlSession.selectOne(namespace + ".loginCheck", user);
 		return (sql == null) ? false : true;
 	}
 	
 	@Override
 	public UserVO viewUser(UserVO user) {
-		return sqlSession.selectOne("User.viewUser", user);
+		return sqlSession.selectOne(namespace + ".viewUser", user);
 	}
 	
 	@Override
 	public void register(UserVO user) throws Exception {
-		sqlSession.selectOne("User.register", user);
+		sqlSession.selectOne(namespace + ".register", user);
 	}
 }
