@@ -59,7 +59,7 @@ public class LectureController {
 	  public String detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception{
 		  System.out.println("Lecture page" + lectureId + " is being called");
 		  //System.out.println(service.read(lectureId));
-	      model.addAttribute("lecture", service.read(lectureId));
+	      model.addAttribute("lecture", lectureService.read(lectureId));
 	      return "lectureview";
 	  } 
 	  
@@ -67,6 +67,14 @@ public class LectureController {
     public String addLecture() {
 		logger.info("Here is add new lecture page");
     	return "addLecture"; 
+
+    }
+    
+    @RequestMapping(value = "/mypage/delete", method = RequestMethod.GET)
+    public String deleteLecture(int lectureId) throws Exception {
+    	lectureService.deleteLecture(lectureId);
+    	return "mypage"; 
+
     } 
     
 }

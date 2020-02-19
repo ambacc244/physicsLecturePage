@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>My Page</title>
+<script src="resources/js/mypage.js"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
@@ -28,8 +29,8 @@
 		    	<th>${row.lectureTitle}</th>
 		    	<th>${row.lectureDate}</th>
 		    	<th>${row.lectureTime}</th>
-		    	<th><button>Edit</button></th>
-		    	<th><button>Delete</button></th>
+		    	<th><button type="submit" onclick="editLecture(${row.lectureId})">Edit</button></th>
+		    	<th><button type="submit" onclick="deleteLecture(${row.lectureId})">Delete</button></th>
 		    </tr>
 	    </c:forEach>
 	    

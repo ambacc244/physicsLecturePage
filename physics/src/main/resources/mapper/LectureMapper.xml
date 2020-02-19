@@ -36,12 +36,12 @@
     	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture WHERE id = #{lectureId}
     </select>
  
-    <delete id="deleteLecture">
-        DELETE FROM lecture WHERE id = #{lectureId}
+    <delete id="deleteLecture" parameterType="int">
+        DELETE FROM lecture WHERE lectureId = #{lectureId}
     </delete>
     
-    <update id="updateLecture">
-        UPDATE lecture SET lectureTitle = #{lectureTitle}
+    <update id="updateLecture" parameterType="int">
+        UPDATE lecture SET lectureTitle = #{lectureTitle} WHERE lectureId = #{lectureId}xw
     </update>
 
 </mapper>

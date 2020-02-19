@@ -47,15 +47,12 @@ public class LectureDao implements ILectureDao{
 	}
 
 	@Override
-	public void delete(int lectureId) throws Exception {
-		// TODO Auto-generated method stub
-		sqlSession.delete(namespace + ".deleteLecture", lectureId);
+	public void deleteLecture(int lectureId) throws Exception {
+		sqlSession.selectOne(namespace + ".deleteLecture", lectureId);
 	}
 
 	@Override
-	public void update(int lectureId) throws Exception {
-		// TODO Auto-generated method stub
-		sqlSession.update(namespace + ".updateLecture", lectureId);
-		
+	public void updateLecture(int lectureId) throws Exception {
+		sqlSession.selectOne(namespace + ".updateLecture", lectureId);
 	}
 }
