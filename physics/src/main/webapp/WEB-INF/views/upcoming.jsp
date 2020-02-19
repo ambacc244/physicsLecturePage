@@ -15,7 +15,7 @@
 	 	<c:forEach var="row" items="${list}">
 		 	<div class="upcommingLecture" style="list-style-type:none">
 		        <div class="upcommingLectureHeader">
-		        	<h2 class="upcommingLectureTitle" > <a href="/lecture/detail?lectureId=${lectureVO.lectureTitle}">Title : ${row.lectureTitle} </a> </h2>
+		        	<h2 class="upcommingLectureTitle" ><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </h2>
 		        </div>
 				<div class="upcommingLectureContents">
 					<h3 class="upcommingLectureDate"> Date : ${row.lectureDate} </h3>

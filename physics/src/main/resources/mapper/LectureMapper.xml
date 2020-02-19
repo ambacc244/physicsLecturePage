@@ -21,8 +21,8 @@
     	 ]]>
     </select>
     
-    <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO">
-    	SELECT * FROM lecture WHERE id = #{lectureId}
+    <select id="detailLecture" resultType="com.osu.lecture.lecture.LectureVO" >
+    	SELECT id AS lectureId, title AS lectureTitle, description AS lectureDesc, link AS lectureLink, date AS lectureDate, time AS lectureTime, instructor_id AS instructorId FROM lecture WHERE id = #{lectureId}
     </select>
  
     <delete id="deleteLecture">

@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
-	<h1>Past Lecture Page!</h1>
+	<h1>Past Lecture Page</h1>
 
 	 <div class="pastLectureContainer">
 	 	<c:forEach var="row" items="${list}">

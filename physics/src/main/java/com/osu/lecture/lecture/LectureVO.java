@@ -70,4 +70,10 @@ public class LectureVO {
 		this.instructorId = instructorId;
 	}
     
+	@Override
+	public String toString() {
+		return "LectureVO [lectureId=" + lectureId + ", lectureTitle=" + lectureTitle + ", lectureDesc=" + lectureDesc
+				+ ", lectureLink=" + lectureLink + ", lectureDate=" + lectureDate + ", lectureTime=" + lectureTime
+				+ ", instructorId=" + instructorId + "]";
+	}
 }

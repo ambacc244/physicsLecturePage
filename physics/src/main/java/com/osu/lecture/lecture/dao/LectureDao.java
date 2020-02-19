@@ -42,7 +42,6 @@ public class LectureDao implements ILectureDao{
 	@Override
 	public LectureVO read(int lectureId) throws Exception {
 		// TODO Auto-generated method stub
-		//sqlSession.selectOne(namespace + ".detailLecture", lectureId);
 		return sqlSession.selectOne(namespace + ".detailLecture", lectureId);
 	}
 

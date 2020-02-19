@@ -55,15 +55,14 @@ public class LectureController {
         return "past";
     }
 
-    @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public ModelAndView detailLecture(@RequestParam("lectureId") int lectureId) throws Exception{
-		System.out.println("Lecture page" + lectureId + " is being called");
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("lectureview");
-        mav.addObject("detail", service.read(lectureId));
-        return mav;
-    } 
-    
+	  @RequestMapping(value = "/detail", method = RequestMethod.GET)
+	  public String detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception{
+		  System.out.println("Lecture page" + lectureId + " is being called");
+		  //System.out.println(service.read(lectureId));
+	      model.addAttribute("lecture", service.read(lectureId));
+	      return "lectureview";
+	  } 
+	  
     @RequestMapping(value = "/mypage/addLecture", method = RequestMethod.GET)
     public String addLecture() {
 		logger.info("Here is add new lecture page");
