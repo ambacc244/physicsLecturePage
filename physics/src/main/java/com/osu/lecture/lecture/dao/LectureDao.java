@@ -26,12 +26,12 @@ public class LectureDao implements ILectureDao{
 	}
 
 	@Override
-	public List<LectureVO> upcomingLectureList(){
+	public List<LectureVO> upcomingLectureList() throws Exception {
 		return sqlSession.selectList(namespace +".selectUpcomingLecture");
 	}
 	
 	@Override
-	public List<LectureVO> pastLectureList(){
+	public List<LectureVO> pastLectureList() throws Exception {
 		return sqlSession.selectList(namespace + ".selectPastLecture");
 	}
 	
@@ -42,7 +42,6 @@ public class LectureDao implements ILectureDao{
 
 	@Override
 	public LectureVO read(int lectureId) throws Exception {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace + ".detailLecture", lectureId);
 	}
 

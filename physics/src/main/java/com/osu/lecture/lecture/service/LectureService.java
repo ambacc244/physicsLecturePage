@@ -23,12 +23,12 @@ public class LectureService implements ILectureService{
 	}
 
 	@Override
-	public List<LectureVO> upcomingLectureList() {
+	public List<LectureVO> upcomingLectureList() throws Exception {
 		return lectureDao.upcomingLectureList();
 	}
 	
 	@Override
-	public List<LectureVO> pastLectureList() {
+	public List<LectureVO> pastLectureList() throws Exception {
 		return lectureDao.pastLectureList();
 	}
 

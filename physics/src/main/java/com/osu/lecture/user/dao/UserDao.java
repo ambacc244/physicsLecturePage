@@ -19,13 +19,13 @@ public class UserDao implements IUserDao {
 	private static final String namespace = "UserMapper";
 	
 	@Override 
-	public boolean loginCheck(UserVO user) {
+	public boolean loginCheck(UserVO user) throws Exception {
 		String sql = sqlSession.selectOne(namespace + ".loginCheck", user);
 		return (sql == null) ? false : true;
 	}
 	
 	@Override
-	public UserVO viewUser(UserVO user) {
+	public UserVO viewUser(UserVO user) throws Exception {
 		return sqlSession.selectOne(namespace + ".viewUser", user);
 	}
 	

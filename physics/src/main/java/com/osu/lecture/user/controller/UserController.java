@@ -31,7 +31,7 @@ public class UserController {
 	
 	//login page
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(HttpServletRequest request) {
+	public String login(HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("userId") != null)
@@ -40,7 +40,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String loginCheck(@ModelAttribute UserVO user, HttpSession session) {	
+	public String loginCheck(@ModelAttribute UserVO user, HttpSession session) throws Exception {	
 		boolean result = userService.loginCheck(user, session);
 
 		if(result == true) 
@@ -49,7 +49,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session) throws Exception {
 		userService.logout(session); 
 		return "redirect:/";  //return main page
 	}

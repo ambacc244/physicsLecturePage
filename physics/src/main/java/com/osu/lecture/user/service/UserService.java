@@ -20,7 +20,7 @@ public class UserService implements IUserService {
 	UserDao userDao;
 	
 	@Override
-	public boolean loginCheck(UserVO user, HttpSession session) {
+	public boolean loginCheck(UserVO user, HttpSession session) throws Exception {
 		boolean result = userDao.loginCheck(user);
 		//if id and password exist
 		if(result) {
@@ -36,7 +36,7 @@ public class UserService implements IUserService {
 		userDao.register(user);
 	}
 
-	public void logout(HttpSession session) {
+	public void logout(HttpSession session) throws Exception {
 		session.invalidate();
 		
 	}

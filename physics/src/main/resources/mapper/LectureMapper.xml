@@ -37,11 +37,11 @@
     </select>
  
     <delete id="deleteLecture" parameterType="int">
-        DELETE FROM lecture WHERE lectureId = #{lectureId}
+        DELETE FROM lecture WHERE id = #{lectureId}
     </delete>
     
     <update id="updateLecture" parameterType="int">
-        UPDATE lecture SET lectureTitle = #{lectureTitle} WHERE lectureId = #{lectureId}xw
+        UPDATE lecture SET lectureTitle = #{lectureTitle} WHERE lectureId = #{lectureId}
     </update>
 
 </mapper>

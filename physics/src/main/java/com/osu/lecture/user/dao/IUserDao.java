@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import com.osu.lecture.user.UserVO;
 
 public interface IUserDao {
-	public boolean loginCheck(UserVO user);
-	public UserVO viewUser(UserVO user);
+	public boolean loginCheck(UserVO user) throws Exception;
+	public UserVO viewUser(UserVO user) throws Exception;
 	public void register(UserVO user) throws Exception;
 }

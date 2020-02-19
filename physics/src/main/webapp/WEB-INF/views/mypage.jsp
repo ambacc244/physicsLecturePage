@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>My Page</title>
@@ -29,8 +29,8 @@
 		    	<th>${row.lectureTitle}</th>
 		    	<th>${row.lectureDate}</th>
 		    	<th>${row.lectureTime}</th>
-		    	<th><button type="submit" onclick="editLecture(${row.lectureId})">Edit</button></th>
-		    	<th><button type="submit" onclick="deleteLecture(${row.lectureId})">Delete</button></th>
+		    	<th><button onclick="editLecture(${row.lectureId})">Edit</button></th>
+		    	<th><button onclick="deleteLecture(${row.lectureId})">Delete</button></th>
 		    </tr>
 	    </c:forEach>
 	    
