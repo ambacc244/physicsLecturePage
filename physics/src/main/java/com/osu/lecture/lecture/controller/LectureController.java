@@ -70,4 +70,11 @@ public class LectureController {
         return "redirect:/mypage"; 
     }
     
+    
+    @RequestMapping(value = "/mypage/edit/{lectureId}", method = RequestMethod.GET)
+    public String editLecture(@PathVariable String lectureId) throws Exception {
+        
+        return "editLecture"; 
+    }
+    
 }

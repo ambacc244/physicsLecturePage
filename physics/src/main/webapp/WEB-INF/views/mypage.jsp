@@ -15,7 +15,7 @@
 	<button onclick="location.href = '/lecture/mypage/add'">Add lecture</button>
 	<button onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
 	
-	<table class="myLectureTable">
+	<table class="my-lecture-table">
 		<tr>
 		    <th>Title</th>
 		    <th>Date</th>
@@ -29,7 +29,7 @@
 		    	<th>${row.lectureTitle}</th>
 		    	<th>${row.lectureDate}</th>
 		    	<th>${row.lectureTime}</th>
-		    	<th><button onclick="editLecture(${row.lectureId})">Edit</button></th>
+		    	<th><button onclick="window.location.href='${path}/lecture/mypage/edit/${row.lectureId}'">Edit</button></th>
 		    	<th><button onclick="deleteLecture(${row.lectureId})">Delete</button></th>
 		    </tr>
 	    </c:forEach>

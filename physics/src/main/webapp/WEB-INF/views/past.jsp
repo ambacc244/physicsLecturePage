@@ -11,15 +11,15 @@
 <%@ include file="partials/header.jsp" %>
 	<h1>Past Lecture Page</h1>
 
-	 <div class="pastLectureContainer">
+	 <div class="pastLecture-container">
 	 	<c:forEach var="row" items="${list}">
-		 	<div class="pastLecture" style="list-style-type:none">
-		        <div class="pastLectureHeader">
-		        	<h2 class="pastLectureTitle"><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </h2>
+		 	<div class="past-lecture" style="list-style-type:none">
+		        <div class="past-lecture-header">
+		        	<h2 class="past-lecture-title"><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </h2>
 		        </div>
-				<div class="pastLectureContents">
-					<h3 class="pastLectureDate"> Date : ${row.lectureDate} </h3>
-					<h3 class="upcommingLectureDate"> Time : ${row.lectureTime} </h3>
+				<div class="past-lecture-contents">
+					<h3 class="past-lecture-date"> Date : ${row.lectureDate} </h3>
+					<h3 class="upcomming-lecture-time"> Time : ${row.lectureTime} </h3>
 				</div>
 			</div>
 	    </c:forEach>
