@@ -1,27 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Add Lecture</title>
-<script>
-    function checkInputIsNull(){
-        var i = 0;
-        var x = document.getElementsByClassName("createForm");
-        for(;i < x.length; i++){
-            if( x[i].value === ''){
-                alert("You should write something");
-                return false;
-            }
-        }
-        return true;
-    }
-</script>
+<script src="<c:url value="/resources/js/create.js"/>"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
-    <h1>Add lecture</h1>
+    <h1>Add lecture page</h1>
 
     <form class="create-lecture-form" action="${path}/lecture/mypage/add" method="POST">
        <div class="tableForm">
@@ -36,10 +25,12 @@
             <label>Link</label>
             <input type="text" name="lectureLink" class="createForm" placeholder="Link Address">
         </div>
+        <!--  TODO: THIS COMMENT SHOULD BE DELETED WHEN THE WHOLE WORK IS ABOUT TO BE FINISHED.
         <div class="tableForm">
             <label>Author Id</label>
             <input type="text" name="instructorId" class="createForm" placeholder="이건 나중에지울거야!">
         </div>
+        -->
         <div class="tableForm">
             <label>Dates</label>
             <input type="date" name="lectureDate" class="createForm" placeholder="lecture Date">
