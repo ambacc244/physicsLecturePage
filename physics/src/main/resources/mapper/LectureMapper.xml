@@ -40,8 +40,9 @@
         DELETE FROM lecture WHERE id = #{lectureId}
     </delete>
     
-    <update id="updateLecture" parameterType="int">
-        UPDATE lecture SET lectureTitle = #{lectureTitle} WHERE lectureId = #{lectureId}
+    <update id="updateLecture" parameterType="com.osu.lecture.lecture.LectureVO">
+        UPDATE lecture SET title = #{lectureTitle}, description = #{lectureDesc}, link = #{lectureLink}, date = #{lectureDate}, time = #{lectureTime}
+        WHERE lectureId = #{lectureId}
     </update>
 
 </mapper>

@@ -48,7 +48,7 @@ public class LectureService implements ILectureService{
 	}
 
 	@Override
-	public void updateLecture(int lectureId) throws Exception {
-		lectureDao.updateLecture(lectureId);
+	public void updateLecture(LectureVO vo) throws Exception {
+		lectureDao.updateLecture(vo);
 	}
 }

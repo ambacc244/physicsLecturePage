@@ -1,11 +1,10 @@
 function editLecture(lectureId){
-	
+	//get values
 	var lectureTitle = document.getElementsByName('lectureTitle')[0].value;
 	var lectureDesc = document.getElementsByName('lectureDesc')[0].value;
 	var lectureLink = document.getElementsByName('lectureLink')[0].value;
 	var lectureDate = document.getElementsByName('lectureDate')[0].value;
 	var lectureTime = document.getElementsByName('lectureTime')[0].value;
-
 	//check empty value
 	if(lectureTitle == ""){
 		alert("Title을 입력하세요.");
@@ -29,8 +28,6 @@ function editLecture(lectureId){
 	}
 
 	if(confirm("강의를 수정하시습니까?")){
-
 		document.editForm.submit();
-		
 	}
 }

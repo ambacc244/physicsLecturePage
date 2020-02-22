@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Lecture</title>
-<script src="<c:url value="/resources/js/create.js"/>"></script>
+<script type="text/javascript" src="<c:url value="resources/js/create.js"/>"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>

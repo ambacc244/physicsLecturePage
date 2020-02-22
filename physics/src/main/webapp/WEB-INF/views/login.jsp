@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login Page</title>
-<script src="resources/js/login.js"></script>
+<script type="text/javascript" src="<c:url value="resources/js/login.js"/>"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>

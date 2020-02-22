@@ -51,8 +51,8 @@ public class LectureDao implements ILectureDao{
 	}
 
 	@Override
-	public void updateLecture(int lectureId) throws Exception {
-		sqlSession.selectOne(namespace + ".updateLecture", lectureId);
+	public void updateLecture(LectureVO vo) throws Exception {
+		sqlSession.selectOne(namespace + ".updateLecture", vo);
 	}
 
 }

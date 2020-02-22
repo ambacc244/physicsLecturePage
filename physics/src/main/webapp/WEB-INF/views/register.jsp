@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Register</title>
-<script src="resources/js/register.js"></script>
+<script type="text/javascript" src="resources/js/register.js"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
-	<h2>Register</h2>
+	<h1>Register</h1>
 	
 	<form name="registerForm" action="${path}/lecture/mypage/register" method="post">
 		ID : <input type="text" name="userId"><br>

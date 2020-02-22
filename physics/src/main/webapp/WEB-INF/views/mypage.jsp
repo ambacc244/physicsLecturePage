@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>My Page</title>
-<script src="resources/js/mypage.js"></script>
+<script type="text/javascript" src="resources/js/mypage.js"></script>
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>

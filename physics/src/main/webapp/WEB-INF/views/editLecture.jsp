@@ -5,17 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Edit Lecture Page</title>
+<script type="text/javascript" src="resources/js/editLecture.js"></script> 
 </head>
 <body>
+<%@ include file="partials/header.jsp" %>
     <h1>Edit lecture</h1>
 
-    <form name="editForm" action="${path}/mypage/edit/${lecture.lectureId}" method="POST">
-    	Title:  <input type="text" name="lectureTitle" value="${lecture.lectureTitle}">
-    	Description: <textarea name="lectureDesc" cols="30" rows="10">${lecture.lectureDesc}</textarea>
-		Link: <input type="text" name="lectureLink" value="${lecture.lectureLink}">
-  		Date: <input type="date" name="lectureDate" value="${lecture.lectureDate}">
-  		Time: <input type="time" name="lectureTime" value="${lecture.lectureTime}">
- 		<button type="submit" onclick="editLecture()">Submit</button>
+    <form name="editForm" action="${path}/lecture/mypage/edit" method="post">
+    	Title: <input type="text" name="lectureTitle" value="${lecture.lectureTitle}"><br>
+    	Description: <textarea name="lectureDesc" cols="30" rows="10">${lecture.lectureDesc}</textarea><br>
+		Link: <input type="text" name="lectureLink" value="${lecture.lectureLink}"><br>
+  		Date: <input type="date" name="lectureDate" value="${lecture.lectureDate}"><br>
+  		Time: <input type="time" name="lectureTime" value="${lecture.lectureTime}"><br>
+ 		<button id="save" type="submit" onclick="editLecture(${lecture.lectureId})">Submit</button>
     </form>
+	
 </body>
 </html>
