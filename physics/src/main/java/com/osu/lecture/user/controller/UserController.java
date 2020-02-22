@@ -78,10 +78,10 @@ public class UserController {
 		
 		if(userService.checkAvailableId(user.getUserId())) {
 			userService.register(user);
-			model.addAttribute("AvailableIdMsg", "available");
+			model.addAttribute("AvailableIdMsg", "계정이 생성되었습니다.");
 		}
 		else {
-			model.addAttribute("AvailableIdMsg", "unavailable");
+			model.addAttribute("AvailableIdMsg", "사용불가능한 아이디 입니다.");
 		}
 		return "register";   //return register.jsp page 
 	}
