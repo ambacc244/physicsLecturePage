@@ -79,14 +79,14 @@ public class LectureController {
     
     
     @RequestMapping(value = "/mypage/edit/{lectureId}", method = RequestMethod.GET)
-    public String editLecture(@PathVariable String lectureId, Model model) throws Exception {
+    public String editLectureGET(@PathVariable String lectureId, Model model) throws Exception {
     	System.out.println("edit clicked lecture GET");
     	model.addAttribute("lecture", lectureService.selectLecture(Integer.parseInt(lectureId)));
         return "editLecture"; 
     }
     
     @RequestMapping(value = "/mypage/edit/{id}", method = RequestMethod.POST)
-    public String updateLecture(@RequestParam("lectureId") int id, @ModelAttribute LectureVO lecture) throws Exception {
+    public String editLecturePOST(@RequestParam("lectureId") int id, @ModelAttribute LectureVO lecture) throws Exception {
     	System.out.println("edit clicked lecture POST");
     	lectureService.updateLecture(lecture);
     	return "redirect:/mypage"; 

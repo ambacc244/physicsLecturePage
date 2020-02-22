@@ -33,4 +33,10 @@ public class UserDao implements IUserDao {
 	public void register(UserVO user) throws Exception {
 		sqlSession.selectOne(namespace + ".register", user);
 	}
+
+	@Override
+	public boolean checkAvailableId(String userId) throws Exception {
+		String sql = sqlSession.selectOne(namespace + ".selectUserbyId", userId);
+		return (sql == null) ? true : false;
+	}
 }

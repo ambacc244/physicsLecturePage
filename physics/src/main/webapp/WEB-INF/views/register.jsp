@@ -16,5 +16,8 @@
 		PW : <input type="password" name="userPw"><br>
 		<button type="submit" onclick="register()">Register</button>
 	</form>
+	
+	${AvailableIdMsg}
+	
 </body>
 </html>

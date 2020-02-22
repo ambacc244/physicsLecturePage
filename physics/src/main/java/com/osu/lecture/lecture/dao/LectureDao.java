@@ -4,8 +4,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.osu.lecture.lecture.LectureVO;
@@ -19,7 +17,6 @@ public class LectureDao implements ILectureDao{
 	
 	@Override
 	public void create(LectureVO vo) throws Exception {
-		// TODO Auto-generated method stub
 		sqlSession.insert(namespace + ".insertLecture", vo);
 		
 	}
@@ -54,9 +51,8 @@ public class LectureDao implements ILectureDao{
 		sqlSession.selectOne(namespace + ".updateLecture", vo);
 	}
 
-	public int getInstructorId(String userId) {
-		System.out.println(userId);
-		return sqlSession.selectOne(namespace + ".selectInstructorId", userId);
+	@Override
+	public int getInstructorId(String userId) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectIdbyUserId", userId);
 	}
-
 }

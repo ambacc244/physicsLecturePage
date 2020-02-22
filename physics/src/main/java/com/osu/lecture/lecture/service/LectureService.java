@@ -50,9 +50,10 @@ public class LectureService implements ILectureService{
 	public void updateLecture(LectureVO vo) throws Exception {
 		lectureDao.updateLecture(vo);
 	}
-
-	public int getInstructorId(String userId) {
+	
+	@Override
+	public int getInstructorId(String userId) throws Exception {
 		return lectureDao.getInstructorId(userId);
-		
 	}
+
 }

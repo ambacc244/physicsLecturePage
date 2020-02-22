@@ -47,7 +47,7 @@
         ]]>
     </update>
     
-    <select id="selectInstructorId" resultType="_int" >
+    <select id="selectIdbyUserId" resultType="_int" >
     	SELECT id AS instructorId FROM user WHERE user_id = #{userId};
     </select>
 

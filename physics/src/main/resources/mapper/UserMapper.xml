@@ -15,4 +15,7 @@
         INSERT INTO user (user_id, user_pw) VALUE (#{userId}, #{userPw})
     </insert>
     
+    <select id="selectUserbyId" resultType="String">
+    	SELECT * FROM user WHERE user_id = #{userId}
+    </select>
 </mapper>

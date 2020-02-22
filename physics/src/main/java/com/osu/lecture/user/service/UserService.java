@@ -36,8 +36,14 @@ public class UserService implements IUserService {
 		userDao.register(user);
 	}
 
+	@Override
 	public void logout(HttpSession session) throws Exception {
 		session.invalidate();
 		
+	}
+
+	@Override
+	public boolean checkAvailableId(String userId) throws Exception {
+		return userDao.checkAvailableId(userId);
 	}
 }

@@ -12,5 +12,5 @@ public interface ILectureDao {
 	public void deleteLecture(int lectureId) throws Exception;
 	public void updateLecture(LectureVO vo) throws Exception;
 	public LectureVO selectLecture(int lectureId) throws Exception;
-	
+	public int getInstructorId(String userId) throws Exception;
 }

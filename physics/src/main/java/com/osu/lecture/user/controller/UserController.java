@@ -6,8 +6,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,8 +19,6 @@ import com.osu.lecture.user.service.UserService;
 
 @Controller
 public class UserController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Inject
 	UserService userService;
 	@Inject
@@ -78,8 +74,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage/register", method = RequestMethod.POST)
-	public String registerUser(@ModelAttribute UserVO user) throws Exception {
-		userService.register(user);
-		return "register";  //return register.jsp page 
+	public String registerUser(@ModelAttribute UserVO user, Model model) throws Exception {
+		
+		if(userService.checkAvailableId(user.getUserId())) {
+			userService.register(user);
+			model.addAttribute("AvailableIdMsg", "available");
+		}
+		else {
+			model.addAttribute("AvailableIdMsg", "unavailable");
+		}
+		return "register";   //return register.jsp page 
 	}
 }

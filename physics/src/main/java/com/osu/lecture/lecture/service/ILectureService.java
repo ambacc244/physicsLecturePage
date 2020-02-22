@@ -11,5 +11,6 @@ public interface ILectureService {
 	public LectureVO selectLecture(int parseInt) throws Exception;	
 	public void deleteLecture(int lectureId) throws Exception;
 	public void updateLecture(LectureVO vo) throws Exception;
+	public int getInstructorId(String userId) throws Exception;
 	
 }
