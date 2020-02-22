@@ -41,8 +41,10 @@
     </delete>
     
     <update id="updateLecture" parameterType="com.osu.lecture.lecture.LectureVO">
+    	<![CDATA[
         UPDATE lecture SET title = #{lectureTitle}, description = #{lectureDesc}, link = #{lectureLink}, date = #{lectureDate}, time = #{lectureTime}
-        WHERE lectureId = #{lectureId}
+        WHERE id = #{lectureId}
+        ]]>
     </update>
 
 </mapper>

@@ -1,5 +1,6 @@
-function editLecture(lectureId){
+function editLecture(){
 	//get values
+	var lectureId = document.getElementsByName('lectureId')[0].value;
 	var lectureTitle = document.getElementsByName('lectureTitle')[0].value;
 	var lectureDesc = document.getElementsByName('lectureDesc')[0].value;
 	var lectureLink = document.getElementsByName('lectureLink')[0].value;

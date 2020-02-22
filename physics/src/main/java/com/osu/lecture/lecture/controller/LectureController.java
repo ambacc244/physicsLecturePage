@@ -3,6 +3,7 @@ package com.osu.lecture.lecture.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.sound.sampled.SourceDataLine;
 
@@ -47,7 +48,7 @@ public class LectureController {
     }
     
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model) throws Exception {
+    public String home(HttpServletRequest request, Model model) throws Exception {
     	List<LectureVO> list = lectureService.upcomingLectureList();
     	model.addAttribute("list", list);
         return "upcoming";
@@ -76,17 +77,17 @@ public class LectureController {
     
     
     @RequestMapping(value = "/mypage/edit/{lectureId}", method = RequestMethod.GET)
-    public String editLecturePage(@PathVariable String lectureId, Model model) throws Exception {
+    public String editLecture(@PathVariable String lectureId, Model model) throws Exception {
     //	lectureService.selectLecture(Integer.parseInt(lectureId));
     	model.addAttribute("lecture", lectureService.selectLecture(Integer.parseInt(lectureId)));
         return "editLecture"; 
     }
     
-    @RequestMapping(value = "/mypage/edit", method = RequestMethod.POST)
-    public String editLecture(@RequestParam("lectureId") int lectureId, @ModelAttribute LectureVO lecture) throws Exception {
-    //	@ModelAttribute UserVO user, HttpSession session
-    	System.out.println(lecture.getLectureId());
-    	
+    @RequestMapping(value = "/mypage/edit/{id}", method = RequestMethod.POST)
+    public String updateLecture(@RequestParam("lectureId") int id, @ModelAttribute LectureVO lecture) throws Exception {
+    	//@ModelAttribute UserVO user, HttpSession session
+    	//System.out.println(lecture.getLectureId());
+    	lectureService.updateLecture(lecture);
     	return "redirect:/mypage"; 
     }
 }

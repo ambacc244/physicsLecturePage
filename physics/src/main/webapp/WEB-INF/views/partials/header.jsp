@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <header>
-
-<%@ include file="loginHeader.jsp" %>
-<%@ include file="mypageHeader.jsp" %>
-
+ 
+ <%@ include file="mypageHeader.jsp" %>	
+ <%@ include file="loginHeader.jsp" %>
+ 
   <aside id="header_aside" role="complementary">
     <h1 class = "site-title"><a href = "${path}/lecture"> Physic Virtual Class Room </a></h1>
     <nav class = "navbar">

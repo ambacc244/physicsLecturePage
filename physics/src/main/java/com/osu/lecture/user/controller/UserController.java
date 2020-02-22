@@ -33,17 +33,19 @@ public class UserController {
 	public String login(HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("userId") != null)
+		if(session.getAttribute("userId") != null) {
 			return "redirect:/mypage";   // if already logged in, direct to my page
+		}
 		return "login";  //return login.jsp page 
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String loginCheck(@ModelAttribute UserVO user, HttpSession session) throws Exception {	
 		boolean result = userService.loginCheck(user, session);
-
-		if(result == true) 
+	
+		if(result == true) {
 			return "redirect:/mypage";  //if successfully logged in, direct to my page
+		}
 		return "login";  //if fail to login, direct to login page
 	}
 	
@@ -62,7 +64,7 @@ public class UserController {
 
 		List<LectureVO> list = lectureService.myLectureList((String) session.getAttribute("userId"));  //send user id to mapper
     	model.addAttribute("list", list);
-    	
+ 
 		return "mypage";  //return mypage.jsp page 
 	}
 	
