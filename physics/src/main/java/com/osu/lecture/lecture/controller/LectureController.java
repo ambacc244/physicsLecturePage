@@ -25,22 +25,21 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LectureController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(LectureController.class);
     @Inject
     private LectureService lectureService;
 
     @RequestMapping(value = "/mypage/add", method = RequestMethod.GET)
     public String createGET(LectureVO lecture, Model model) throws Exception {
-        System.out.println("creat. GET");
+        System.out.println("add lecture GET");
         return "create"; 
     }
 
     @RequestMapping(value = "/mypage/add", method = RequestMethod.POST)
-    public String createPOST(LectureVO lecture, RedirectAttributes ra) throws Exception {
-        System.out.println("create. POST");
+    public String createPOST(LectureVO lecture, RedirectAttributes ra, HttpServletRequest request) throws Exception {
+        System.out.println("add lecture POST");
+        HttpSession session = request.getSession();
         System.out.println(lecture.toString());
-
+        lecture.setInstructorId(lectureService.getInstructorId((String)session.getAttribute("userId")));
         lectureService.create(lecture);
         ra.addFlashAttribute("result", "Done!");
 
@@ -49,6 +48,7 @@ public class LectureController {
     
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) throws Exception {
+    	System.out.println("upcoming lecture GET");
     	List<LectureVO> list = lectureService.upcomingLectureList();
     	model.addAttribute("list", list);
         return "upcoming";
@@ -56,6 +56,7 @@ public class LectureController {
     
     @RequestMapping(value = "/past", method = RequestMethod.GET)
     public String past(Model model) throws Exception {
+    	System.out.println("past lecture GET");
     	List<LectureVO> list = lectureService.pastLectureList();
     	model.addAttribute("list", list);
         return "past";
@@ -71,6 +72,7 @@ public class LectureController {
 
     @RequestMapping(value = "/mypage/delete/{lectureId}", method = RequestMethod.GET)
     public String deleteLecture(@PathVariable String lectureId) throws Exception {
+    	System.out.println("delete clicked lecture");
         lectureService.deleteLecture(Integer.parseInt(lectureId));
         return "redirect:/mypage"; 
     }
@@ -78,15 +80,14 @@ public class LectureController {
     
     @RequestMapping(value = "/mypage/edit/{lectureId}", method = RequestMethod.GET)
     public String editLecture(@PathVariable String lectureId, Model model) throws Exception {
-    //	lectureService.selectLecture(Integer.parseInt(lectureId));
+    	System.out.println("edit clicked lecture GET");
     	model.addAttribute("lecture", lectureService.selectLecture(Integer.parseInt(lectureId)));
         return "editLecture"; 
     }
     
     @RequestMapping(value = "/mypage/edit/{id}", method = RequestMethod.POST)
     public String updateLecture(@RequestParam("lectureId") int id, @ModelAttribute LectureVO lecture) throws Exception {
-    	//@ModelAttribute UserVO user, HttpSession session
-    	//System.out.println(lecture.getLectureId());
+    	System.out.println("edit clicked lecture POST");
     	lectureService.updateLecture(lecture);
     	return "redirect:/mypage"; 
     }

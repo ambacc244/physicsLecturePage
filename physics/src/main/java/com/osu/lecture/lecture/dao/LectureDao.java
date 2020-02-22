@@ -12,7 +12,6 @@ import com.osu.lecture.lecture.LectureVO;
 
 @Repository
 public class LectureDao implements ILectureDao{
-	private static final Logger logger = LoggerFactory.getLogger(LectureDao.class);
 	@Inject
 	private SqlSession sqlSession;
 	
@@ -53,6 +52,11 @@ public class LectureDao implements ILectureDao{
 	@Override
 	public void updateLecture(LectureVO vo) throws Exception {
 		sqlSession.selectOne(namespace + ".updateLecture", vo);
+	}
+
+	public int getInstructorId(String userId) {
+		System.out.println(userId);
+		return sqlSession.selectOne(namespace + ".selectInstructorId", userId);
 	}
 
 }

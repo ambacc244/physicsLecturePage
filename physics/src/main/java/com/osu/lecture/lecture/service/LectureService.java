@@ -12,7 +12,6 @@ import com.osu.lecture.lecture.dao.LectureDao;
 
 @Service
 public class LectureService implements ILectureService{
-	private static final Logger logger = LoggerFactory.getLogger(LectureService.class);
 	@Inject
 	private LectureDao lectureDao;
 
@@ -50,5 +49,10 @@ public class LectureService implements ILectureService{
 	@Override
 	public void updateLecture(LectureVO vo) throws Exception {
 		lectureDao.updateLecture(vo);
+	}
+
+	public int getInstructorId(String userId) {
+		return lectureDao.getInstructorId(userId);
+		
 	}
 }

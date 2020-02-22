@@ -46,5 +46,9 @@
         WHERE id = #{lectureId}
         ]]>
     </update>
+    
+    <select id="selectInstructorId" resultType="_int" >
+    	SELECT id AS instructorId FROM user WHERE user_id = #{userId};
+    </select>
 
 </mapper>
