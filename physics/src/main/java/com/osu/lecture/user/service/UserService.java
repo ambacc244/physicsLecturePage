@@ -1,12 +1,8 @@
 package com.osu.lecture.user.service;
 
-import java.sql.SQLException;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.osu.lecture.user.UserVO;
@@ -14,8 +10,6 @@ import com.osu.lecture.user.dao.UserDao;
 
 @Service
 public class UserService implements IUserService {
-	
-	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 	@Inject 
 	UserDao userDao;
 	

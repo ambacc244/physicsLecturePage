@@ -65,17 +65,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage/register", method = RequestMethod.GET)
-	public String register(HttpServletRequest request) throws Exception {
+	public String register(HttpServletRequest request, Model model) throws Exception {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("userId") == null)
 			return "redirect:/login";  // if not logged in, direct to login page
+		
+		model.addAttribute("AvailableIdMsg", "");
 		return "register";  //return register.jsp page 
 	}
 	
 	@RequestMapping(value = "/mypage/register", method = RequestMethod.POST)
 	public String registerUser(@ModelAttribute UserVO user, Model model) throws Exception {
-		
 		if(userService.checkAvailableId(user.getUserId())) {
 			userService.register(user);
 			model.addAttribute("AvailableIdMsg", "계정이 생성되었습니다.");
