@@ -5,7 +5,10 @@ function checkInputIsNull(){
 	var lectureDate = document.getElementsByClassName("lecture-date")[0];
 	var lectureTime = document.getElementsByClassName("lecture-time")[0];
 	
-	var input_values = [lectureTitle, lectureDesc, lectureLink, lectureDate, lectureTime];
+	var youtube_url_regex = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+	var input_values = [
+		get_title_value, get_desc_value, get_text_value, get_date_value, get_time_value
+	];
 
 	var reject_msg =[
 		"Title을 입력하세요",
@@ -18,6 +21,11 @@ function checkInputIsNull(){
 	for(var i=0; i<5; i++){
 		if(input_values[i].value == ""){
 			alert(reject_msg[i]);
+			return false;
+		}
+		
+		if(!(input_values[2].value.match(youtube_url_regex))){
+			alert("Youtube링크가 잘못되었습니다!");
 			return false;
 		}
 	}
