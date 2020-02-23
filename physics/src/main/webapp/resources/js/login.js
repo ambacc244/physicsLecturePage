@@ -1,7 +1,7 @@
 function login(){
 	//get values
-	var userId = document.getElementsByClassName('userId')[0];
-	var userPw = document.getElementsByClassName('userPw')[0];
+	var userId = document.getElementsByClassName("user-id")[0];
+	var userPw = document.getElementsByClassName("user-pw")[0];
 	//check empty value
 	if(userId.value == ""){
 		alert("아이디를 입력하세요.");

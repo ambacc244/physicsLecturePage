@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Edit Lecture Page</title>
-<script src="<c:url value="/resources/js/editLecture.js"/>"></script> 
 
-</head>
-<body>
 <%@ include file="partials/header.jsp" %>
+<!-- Coding Start -->
+
     <h1>Edit lecture</h1>
 
     <form class="edit-form" name="editForm" action="${path}/lecture/mypage/edit/${lecture.lectureId}" method="post">
@@ -23,5 +17,6 @@
  		<button type="submit" class="submit-button" onclick="return editLecture();">Submit</button>
     </form>
 	
-</body>
-</html>
+ <!-- Coding End -->
+<script src="<c:url value="/resources/js/editLecture.js"/>"></script> 
+<%@include file ="partials/footer.jsp" %>

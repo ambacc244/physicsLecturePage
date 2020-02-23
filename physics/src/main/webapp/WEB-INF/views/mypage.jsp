@@ -1,15 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>My Page</title>
-<script type="text/javascript" src="resources/js/mypage.js"></script>
-</head>
-<body>
+
 <%@ include file="partials/header.jsp" %>
+<!-- Coding Start -->
+
 	<h2>Login Success: ${sessionScope.userId} - ${sessionScope.userPw}</h2>
 
 	<button onclick="location.href = '/lecture/mypage/add'">Add lecture</button>
@@ -38,5 +33,6 @@
 	    
 	</table>
 	
-</body>
-</html>
+<!-- Coding End -->
+<script type="text/javascript" src="resources/js/mypage.js"></script>
+<%@include file ="partials/footer.jsp" %>

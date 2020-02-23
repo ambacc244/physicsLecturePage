@@ -2,15 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <%@ page isELIgnored="false" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Lecture View Page</title>
-<script src="<c:url value="/resources/js/lectureview.js"/>"></script>
-</head>
-<body>
+
 <%@ include file="partials/header.jsp" %>
+<!-- Coding Start -->
+
    <h1>Lecture detailed view pages</h1>
   	 	<div class="lecture-title">
   	 		title: ${lecture.lectureTitle}
@@ -23,5 +18,7 @@
   	 	<div class="lecture-desc">
   	 		Description: ${lecture.lectureDesc }
   	 	</div>
-</body>
-</html>
+
+ <!-- Coding End -->
+<script src="<c:url value="/resources/js/lectureview.js"/>"></script>
+<%@include file ="partials/footer.jsp" %>

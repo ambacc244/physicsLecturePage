@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Past Lecture Page</title>
-</head>
-<body>
+
 <%@ include file="partials/header.jsp" %>
+<!-- Coding Start -->
+
 	<h1>Past Lecture Page</h1>
 
 	 <div class="pastLecture-container">
@@ -24,5 +20,6 @@
 			</div>
 	    </c:forEach>
 	 </div>
-</body>
-</html>
+	 
+<!-- Coding End -->
+<%@include file ="partials/footer.jsp" %>
