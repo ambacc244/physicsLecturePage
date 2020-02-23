@@ -6,29 +6,26 @@ function editLecture(){
 	var lectureLink = document.getElementsByName('lectureLink')[0].value;
 	var lectureDate = document.getElementsByName('lectureDate')[0].value;
 	var lectureTime = document.getElementsByName('lectureTime')[0].value;
-	//check empty value
-	if(lectureTitle == ""){
-		alert("Title을 입력하세요.");
-		return;
-	}
-	else if(lectureDesc == ""){
-		alert("Description을 입력하세요.");
-		return;
-	}
-	else if(lectureLink == ""){
-		alert("Link를 입력하세요.");
-		return;
-	}
-	else if(lectureDate == ""){
-		alert("Date를 입력하세요.");
-		return;
-	}
-	else if(lectureTime == ""){
-		alert("Time을 입력하세요.");
-		return;
+
+	var input_values = [lectureTitle, lectureDesc, lectureLink, lectureDate, lectureTime];
+
+	var reject_msg =[
+		"Title을 입력하세요",
+		"Description을 입력하세요",
+		"Link를 입력하세요",
+		"Date를 입력하세요",
+		"Time을 입력하세요"
+	];
+
+	for(var i=0; i<5; i++){
+		if(input_values[i] == ""){
+			alert(reject_msg[i]);
+			return false;
+		}
 	}
 
 	if(confirm("강의를 수정하시습니까?")){
-		document.editForm.submit();
+		return document.editForm.submit();
 	}
+	return false;
 }

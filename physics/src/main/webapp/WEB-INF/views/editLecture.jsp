@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Edit Lecture Page</title>
-<script type="text/javascript" src="resources/js/editLecture.js"></script> 
+<script src="<c:url value="/resources/js/editLecture.js"/>"></script> 
+
 </head>
 <body>
 <%@ include file="partials/header.jsp" %>
@@ -18,7 +20,7 @@
 		Link: <input type="text" name="lectureLink" value="${lecture.lectureLink}"><br>
   		Date: <input type="date" name="lectureDate" value="${lecture.lectureDate}"><br>
   		Time: <input type="time" name="lectureTime" value="${lecture.lectureTime}"><br>
- 		<button type="submit" onclick="editLecture()">Submit</button>
+ 		<button type="submit" onclick="return editLecture();">Submit</button>
     </form>
 	
 </body>

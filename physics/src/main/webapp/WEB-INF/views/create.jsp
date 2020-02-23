@@ -12,13 +12,13 @@
 <%@ include file="partials/header.jsp" %>
     <h1>Add lecture page</h1>
 
-    <form name="createLectureForm" class="create-lecture-form" action="${path}/lecture/mypage/add" method="POST">
-    	Title: <input type="text" class="titleFrom"  name="lectureTitle" placeholder="lecture title"> 
-  		Description: <textarea class="descFrom" name="lectureDesc" cols="30" rows="10" placeholder="lecture desc"></textarea>
-    	Link: <input type="text" class="linkForm" name="lectureLink" placeholder="Link Address">
-  		Dates: <input type="date" class="dateFrom" name="lectureDate" placeholder="2020-01-01">
-		Time: <input type="time" class="timeForm" name="lectureTime" placeholder="00:00:00">
-		<button type="submit" class="submitForm" onclick="return checkInputIsNull();">Submit</button>
+    <form name="createLectureForm" action="${path}/lecture/mypage/add" method="POST">
+    	Title: <input type="text" name="lectureTitle" placeholder="lecture title"> 
+  		Description: <textarea name="lectureDesc" cols="30" rows="10" placeholder="lecture desc"></textarea>
+    	Link: <input type="text" name="lectureLink" placeholder="Link Address">
+  		Dates: <input type="date" name="lectureDate" placeholder="2020-01-01">
+		Time: <input type="time" name="lectureTime" placeholder="00:00:00">
+		<button type="submit" onclick="return checkInputIsNull();">Submit</button>
     </form>
 </body>
 </html>

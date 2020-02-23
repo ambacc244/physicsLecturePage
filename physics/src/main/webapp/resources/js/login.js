@@ -5,12 +5,12 @@ function login(){
 	//check empty value
 	if(userId == ""){
 		alert("아이디를 입력하세요.");
-		return;
+		return false;
 	}
 	else if(userPw == ""){
 		alert("비밀번호를 입력하세요.");
-		return;
+		return false;
 	}
 	
-	document.loginForm.submit();
+	return document.loginForm.submit();
 }
