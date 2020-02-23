@@ -18,6 +18,7 @@
 	<table class="my-lecture-table">
 		<tr>
 		    <th>Title</th>
+		    <th>Description</th>
 		    <th>Date</th>
 		    <th>Time</th>
 		    <th>Edit</th>
@@ -26,7 +27,8 @@
 		
 	 	<c:forEach var="row" items="${list}">
 		 	<tr>
-		    	<th>${row.lectureTitle}</th>
+		    	<th><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></th>
+		    	<th>${row.lectureDesc}</th>
 		    	<th>${row.lectureDate}</th>
 		    	<th>${row.lectureTime}</th>   
 		    	<th><button onclick="window.location.href='${path}/lecture/mypage/edit/${row.lectureId}'">Edit</button></th>
