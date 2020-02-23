@@ -13,10 +13,10 @@
 <%@ include file="partials/header.jsp" %>
 	<h1>Register</h1>
 	
-	<form name="registerForm" action="${path}/lecture/mypage/register" method="post">
-		ID : <input type="text" name="userId"><br>
-		PW : <input type="password" name="userPw"><br>
-		<button type="submit" onclick="return register();">Register</button>
+	<form class="register-form" name="registerForm" action="${path}/lecture/mypage/register" method="post">
+		ID : <input type="text" class="user-id" name="userId"><br>
+		PW : <input type="password" class="user-pw" name="userPw"><br>
+		<button type="submit" class="submit-button" onclick="return register();">Register</button>
 	</form>
 	
 	${AvailableIdMsg}

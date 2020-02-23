@@ -12,10 +12,10 @@
 <%@ include file="partials/header.jsp" %>
 	<h1>Login</h1>
 	
-	<form name="loginForm" action="${path}/lecture/login" method="post">
-		ID : <input type="text" name="userId"><br>
-		PW : <input type="password" name="userPw"><br>
-		<button type="submit" onclick="return login();">Login</button>
+	<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
+		ID : <input type="text" class="user-id" name="userId"><br>
+		PW : <input type="password" class="user-pw" name="userPw"><br>
+		<button type="submit" class="submit-button" onclick="return login();">Login</button>
 	</form>
 </body>
 </html>

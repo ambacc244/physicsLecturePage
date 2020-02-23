@@ -1,11 +1,10 @@
 function editLecture(){
 	//get values
-	var lectureId = document.getElementsByName('lectureId')[0].value;
-	var lectureTitle = document.getElementsByName('lectureTitle')[0].value;
-	var lectureDesc = document.getElementsByName('lectureDesc')[0].value;
-	var lectureLink = document.getElementsByName('lectureLink')[0].value;
-	var lectureDate = document.getElementsByName('lectureDate')[0].value;
-	var lectureTime = document.getElementsByName('lectureTime')[0].value;
+	var lectureTitle = document.getElementsByClassName("lecture-title")[0];
+	var lectureDesc = document.getElementsByClassName("lecture-desc")[0];
+	var lectureLink = document.getElementsByClassName("lecture-link")[0];
+	var lectureDate = document.getElementsByClassName("lecture-date")[0];
+	var lectureTime = document.getElementsByClassName("lecture-time")[0];
 
 	var input_values = [lectureTitle, lectureDesc, lectureLink, lectureDate, lectureTime];
 
@@ -18,14 +17,11 @@ function editLecture(){
 	];
 
 	for(var i=0; i<5; i++){
-		if(input_values[i] == ""){
+		if(input_values[i].value == ""){
 			alert(reject_msg[i]);
 			return false;
 		}
 	}
 
-	if(confirm("강의를 수정하시습니까?")){
-		return document.editForm.submit();
-	}
-	return false;
+	return confirm("강의를 수정하시습니까?");
 }

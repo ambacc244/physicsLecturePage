@@ -13,14 +13,14 @@
 <%@ include file="partials/header.jsp" %>
     <h1>Edit lecture</h1>
 
-    <form name="editForm" action="${path}/lecture/mypage/edit/${lecture.lectureId}" method="post">
-    	Id: <input type="number" name="lectureId" value="${lecture.lectureId}"><br>
-    	Title: <input type="text" name="lectureTitle" value="${lecture.lectureTitle}"><br>
-    	Description: <textarea name="lectureDesc" cols="30" rows="10">${lecture.lectureDesc}</textarea><br>
-		Link: <input type="text" name="lectureLink" value="${lecture.lectureLink}"><br>
-  		Date: <input type="date" name="lectureDate" value="${lecture.lectureDate}"><br>
-  		Time: <input type="time" name="lectureTime" value="${lecture.lectureTime}"><br>
- 		<button type="submit" onclick="return editLecture();">Submit</button>
+    <form class="edit-form" name="editForm" action="${path}/lecture/mypage/edit/${lecture.lectureId}" method="post">
+    	Id: <input type="number" class="lecture-id" name="lectureId" value="${lecture.lectureId}"><br>
+    	Title: <input type="text" class="lecture-title" name="lectureTitle" value="${lecture.lectureTitle}"><br>
+    	Description: <textarea class="lecture-desc" name="lectureDesc" cols="30" rows="10">${lecture.lectureDesc}</textarea><br>
+		Link: <input type="text" class="lecture-link" name="lectureLink" value="${lecture.lectureLink}"><br>
+  		Date: <input type="date" class="lecture-date" name="lectureDate" value="${lecture.lectureDate}"><br>
+  		Time: <input type="time" class="lecture-time" name="lectureTime" value="${lecture.lectureTime}"><br>
+ 		<button type="submit" class="submit-button" onclick="return editLecture();">Submit</button>
     </form>
 	
 </body>
