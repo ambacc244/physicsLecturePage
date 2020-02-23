@@ -1,34 +1,27 @@
 function editLecture(){
 	//get values
-	var lectureId = document.getElementsByName('lectureId')[0].value;
-	var lectureTitle = document.getElementsByName('lectureTitle')[0].value;
-	var lectureDesc = document.getElementsByName('lectureDesc')[0].value;
-	var lectureLink = document.getElementsByName('lectureLink')[0].value;
-	var lectureDate = document.getElementsByName('lectureDate')[0].value;
-	var lectureTime = document.getElementsByName('lectureTime')[0].value;
-	//check empty value
-	if(lectureTitle == ""){
-		alert("Title을 입력하세요.");
-		return;
-	}
-	else if(lectureDesc == ""){
-		alert("Description을 입력하세요.");
-		return;
-	}
-	else if(lectureLink == ""){
-		alert("Link를 입력하세요.");
-		return;
-	}
-	else if(lectureDate == ""){
-		alert("Date를 입력하세요.");
-		return;
-	}
-	else if(lectureTime == ""){
-		alert("Time을 입력하세요.");
-		return;
+	var lectureTitle = document.getElementsByClassName("lecture-title")[0];
+	var lectureDesc = document.getElementsByClassName("lecture-desc")[0];
+	var lectureLink = document.getElementsByClassName("lecture-link")[0];
+	var lectureDate = document.getElementsByClassName("lecture-date")[0];
+	var lectureTime = document.getElementsByClassName("lecture-time")[0];
+
+	var input_values = [lectureTitle, lectureDesc, lectureLink, lectureDate, lectureTime];
+
+	var reject_msg =[
+		"Title을 입력하세요",
+		"Description을 입력하세요",
+		"Link를 입력하세요",
+		"Date를 입력하세요",
+		"Time을 입력하세요"
+	];
+
+	for(var i=0; i<5; i++){
+		if(input_values[i].value == ""){
+			alert(reject_msg[i]);
+			return false;
+		}
 	}
 
-	if(confirm("강의를 수정하시습니까?")){
-		document.editForm.submit();
-	}
+	return confirm("강의를 수정하시습니까?");
 }

@@ -1,16 +1,16 @@
 function login(){
 	//get values
-	var userId = document.getElementsByName('userId')[0].value;
-	var userPw = document.getElementsByName('userPw')[0].value;
+	var userId = document.getElementsByClassName('userId')[0];
+	var userPw = document.getElementsByClassName('userPw')[0];
 	//check empty value
-	if(userId == ""){
+	if(userId.value == ""){
 		alert("아이디를 입력하세요.");
-		return;
+		return false;
 	}
-	else if(userPw == ""){
+	else if(userPw.value == ""){
 		alert("비밀번호를 입력하세요.");
-		return;
+		return false;
 	}
 	
-	document.loginForm.submit();
+	return true;
 }
