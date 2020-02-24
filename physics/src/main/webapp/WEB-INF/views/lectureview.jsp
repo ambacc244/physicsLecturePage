@@ -13,7 +13,7 @@
   	 	<div class="instructor-id">instructor id: ${lecture.instructorId }</div>
 		<div class="lecture-date">Date: ${lecture.lectureDate } / Time: ${lecture.lectureTime }</div>
 		<div class="lecture-video">
-			<iframe class="lecture-video-link" width="420" height="345" src= "${lecture.lectureLink}" ></iframe>
+			<iframe class="lecture-video-link" width="420" height="345" src= "${lecture.lectureLink}" allowfullscreen="allowfullscreen" ></iframe>
 		</div>   
   	 	<div class="lecture-desc">
   	 		Description: ${lecture.lectureDesc }
