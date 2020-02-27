@@ -6,7 +6,7 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-   <h1>Lecture detailed view pages</h1>
+   <h2>Lecture detailed view pages</h2>
   	 	<div class="lecture-title">
   	 		title: ${lecture.lectureTitle}
   	 	</div>

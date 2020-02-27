@@ -5,7 +5,7 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-	<h1>Login</h1>
+	<h2>Login</h2>
 	
 	<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
 		ID : <input type="text" class="user-id" name="userId"><br>

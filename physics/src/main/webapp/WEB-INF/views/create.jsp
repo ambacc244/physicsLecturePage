@@ -5,7 +5,7 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-    <h1>Add lecture page</h1>
+    <h2>Add lecture page</h2>
 
     <form class="create-lecture-form" name ="createLectureForm" action="${path}/lecture/mypage/add" method="POST">
     	Title: <input type="text" class="lecture-title"  name="lectureTitle" placeholder="lecture title"><br>

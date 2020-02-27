@@ -1,39 +1,61 @@
 body {
-  margin: 8px 8px 8px 250px;
-  padding: 50px 30px;
+	margin: 100px 8px 8px 8px;
+	padding: 50px 30px;
+ 	font-family: Geneva
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 #header_aside {
-  text-transform: uppercase;
-  padding-top: 45px;
-  padding-bottom: 45px;
-  padding-left: 45px;
-  padding-right: 45px;
-  width: 150px;
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  text-align: center;
+	text-transform: uppercase;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	background: #3f3f3f;
 }
 
+#header_aside a {
+	color: white;
+}
 
-.navbar {
-  padding: 50px 0px;
+.site-title {
+	letter-spacing: 5px;
+	margin: 50px;
+}
+
+.navbar a {
+	float: left;	
 }
 
 .navbar ul {
-  padding: 0px;
+	padding: 0px;
+	
+	width: 100%;
+	
+}
+
+.navbar-items {
+	letter-spacing: 2px;
+	font-size: small;
+	float: left;
+	background: #2F94A8;
+	margin: 0px;
+
 }
 
 .navitem {
-  list-style: none;
+	list-style: none;
+	display: inline;
 }
 
-.navitem a{
- 
+.navbar-items a {
+	padding: 15px 30px;
+}
+
+h2 {
+	text-align: center;
 }

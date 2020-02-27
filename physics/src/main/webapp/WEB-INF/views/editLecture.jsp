@@ -5,7 +5,7 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-    <h1>Edit lecture</h1>
+    <h2>Edit lecture</h2>
 
     <form class="edit-form" name="editForm" action="${path}/lecture/mypage/edit/${lecture.lectureId}" method="post">
     	Id: <input type="number" class="lecture-id" name="lectureId" value="${lecture.lectureId}"><br>

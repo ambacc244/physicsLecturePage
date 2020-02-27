@@ -5,7 +5,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css?after" type="text/css" >
 </head>
 <body>
 
