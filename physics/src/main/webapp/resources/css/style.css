@@ -33,9 +33,7 @@ a {
 
 .navbar ul {
 	padding: 0px;
-	
 	width: 100%;
-	
 }
 
 .navbar-items {
@@ -44,7 +42,6 @@ a {
 	float: left;
 	background: #2F94A8;
 	margin: 0px;
-
 }
 
 .navitem {
@@ -58,4 +55,5 @@ a {
 
 h2 {
 	text-align: center;
+	margin: 80px 60px;
 }
