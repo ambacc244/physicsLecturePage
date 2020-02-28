@@ -10,19 +10,16 @@
 	 <div class="lecture-container">
 	 	<c:forEach var="row" items="${list}">
 		 	<div class="lecture" style="list-style-type:none">
-		        <div class="lecture-header">
-		        	<div class="lecture-title" ><a href="/lecture/detail?lectureId=${row.lectureId}"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> ${row.lectureTitle} </a> </div>
-		        </div>
-				<div class="lecture-contents">
-					<div class="lecture-date"> ${row.lectureDesc} </div>
-					<div class="lecture-date"> Date : ${row.lectureDate} </div>
-					${row.lectureTime}
-					<div class="lecture-time"> 
-						<script type="text/javascript">
-						tConvert(${row.lectureTime});
-						</script>
-					</div>
+		        <div class="lecture-icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
+		        <div class="lecture-title" ><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></div>
+				<div class="lecture-date"> Date : ${row.lectureDate}  ${row.lectureTime}</div>
+				<!--  
+				<div class="lecture-time"> 
+					<script type="text/javascript">
+					tConvert(${row.lectureTime});
+					</script>
 				</div>
+				-->
 			</div>
 	    </c:forEach>
 	 </div>

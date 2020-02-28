@@ -9,7 +9,7 @@
 
 	 <div class="lecture-container">
 	 	<c:forEach var="row" items="${list}">
-		 	<div class="lecture" style="list-style-type:none">
+		 	<div class="lecture">
 		        <div class="lecture-header">
 		        	<div class="lecture-title"><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </div>
 		        </div>
