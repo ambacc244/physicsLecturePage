@@ -65,6 +65,7 @@ h2 {
 .each-lecture {
   margin: auto;
   width: 620px;
+  padding: 50px;
 }
 
 .each {
@@ -85,15 +86,3 @@ h2 {
 .each-desc {
 	padding: 0px 15px 15px 30px;
 }
-
-.user-icon {
-	font-size: 0.73em
-}
-
-
-
-
-
-
-
-
