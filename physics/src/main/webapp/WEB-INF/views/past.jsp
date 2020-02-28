@@ -7,15 +7,15 @@
 
 	<h2>Past Lecture Page</h2>
 
-	 <div class="pastLecture-container">
+	 <div class="lecture-container">
 	 	<c:forEach var="row" items="${list}">
-		 	<div class="past-lecture" style="list-style-type:none">
-		        <div class="past-lecture-header">
-		        	<h3 class="past-lecture-title"><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </h3>
+		 	<div class="lecture" style="list-style-type:none">
+		        <div class="lecture-header">
+		        	<div class="lecture-title"><a href="/lecture/detail?lectureId=${row.lectureId}"> Title : ${row.lectureTitle} </a> </div>
 		        </div>
-				<div class="past-lecture-contents">
-					<h4 class="past-lecture-date"> Date : ${row.lectureDate} </h4>
-					<h4 class="upcomming-lecture-time"> Time : ${row.lectureTime} </h4>
+				<div class="lecture-contents">
+					<div class="lecture-date"> Date : ${row.lectureDate} </div>
+					<div class="lecture-time"> Time : ${row.lectureTime} </div>
 				</div>
 			</div>
 	    </c:forEach>

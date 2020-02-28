@@ -7,21 +7,26 @@
 
 	<h2>Upcoming Lecture Page</h2>
 
-	 <div class="upcomming-lecture-container">
+	 <div class="lecture-container">
 	 	<c:forEach var="row" items="${list}">
-		 	<div class="upcomming-lecture" style="list-style-type:none">
-		 	
-		        <div class="upcomming-lecture-header">
-		        	<h3 class="upcomming-lecture-title" ><a href="/lecture/detail?lectureId=${row.lectureId}"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> ${row.lectureTitle} </a> </h3>
+		 	<div class="lecture" style="list-style-type:none">
+		        <div class="lecture-header">
+		        	<div class="lecture-title" ><a href="/lecture/detail?lectureId=${row.lectureId}"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> ${row.lectureTitle} </a> </div>
 		        </div>
-				<div class="upcomming-lecture-contents">
-					<h4 class="upcomming-lecture-date"> ${row.lectureDesc} </h4>
-					<h4 class="upcomming-lecture-date"> Date : ${row.lectureDate} </h4>
-					<h4 class="upcomming-lecture-time"> Time : ${row.lectureTime} </h4>
+				<div class="lecture-contents">
+					<div class="lecture-date"> ${row.lectureDesc} </div>
+					<div class="lecture-date"> Date : ${row.lectureDate} </div>
+					${row.lectureTime}
+					<div class="lecture-time"> 
+						<script type="text/javascript">
+						tConvert(${row.lectureTime});
+						</script>
+					</div>
 				</div>
 			</div>
 	    </c:forEach>
 	 </div>
 	 
 <!-- Coding End -->
+<script src="<c:url value="/resources/js/lecture.js"/>"></script> 
 <%@include file ="partials/footer.jsp" %>
