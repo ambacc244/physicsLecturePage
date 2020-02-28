@@ -93,7 +93,22 @@ h2 {
 
 .lecture {
 	display: inline-block;
+	width: 300px;
+	margin: 10px;
+	letter-spacing: 1px;
 }
+
+.lecture-icon {
+	text-align: center;
+}
+
+.lecture-title {
+	margin: 10px 0px;
+}
+
+
+
+
 
 
 
