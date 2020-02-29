@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.osu.lecture.lecture.LectureVO;
 import com.osu.lecture.lecture.service.LectureService;
@@ -38,7 +39,7 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String loginCheck(@ModelAttribute UserVO user, HttpSession session) throws Exception {	
 		boolean result = userService.loginCheck(user, session);
-	
+		
 		if(result == true) {
 			return "redirect:/mypage";  //if successfully logged in, direct to my page
 		}

@@ -1,5 +1,6 @@
 package com.osu.lecture.lecture.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -23,7 +24,10 @@ public class LectureController {
     private LectureService lectureService;
 
     @RequestMapping(value = "/mypage/add", method = RequestMethod.GET)
-    public String createGET(LectureVO lecture, Model model) throws Exception {
+    public String createGET(LectureVO lecture, HttpServletRequest request,Model model) throws Exception {
+    	HttpSession session = request.getSession();
+    	if(session.getAttribute("userId") == null)
+			return "redirect:/login";  
         System.out.println("add lecture GET");
         return "create"; 
     }
@@ -43,7 +47,7 @@ public class LectureController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) throws Exception {
     	System.out.println("upcoming lecture GET");
-    	List<LectureVO> list = lectureService.upcomingLectureList();
+        List<LectureVO> list = lectureService.upcomingLectureList();
     	model.addAttribute("list", list);
         return "upcoming";
     }
