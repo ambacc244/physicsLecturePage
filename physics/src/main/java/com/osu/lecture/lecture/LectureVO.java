@@ -4,17 +4,18 @@ import java.sql.Date;
 
 public class LectureVO {
 
-    private int lectureId;
+	private int lectureId;
 	private String lectureTitle;
-    private String lectureDesc;
-    private String lectureLink;
+	private String lectureDesc;
+	private String lectureLink;
 	private Date lectureDate;
 	private String lectureTime;
-    private int instructorId;
+	private int instructorId;
 
-    public LectureVO(){}
-    
-    public int getLectureId() {
+	public LectureVO() {
+	}
+
+	public int getLectureId() {
 		return lectureId;
 	}
 
@@ -69,7 +70,7 @@ public class LectureVO {
 	public void setInstructorId(int instructorId) {
 		this.instructorId = instructorId;
 	}
-    
+
 	@Override
 	public String toString() {
 		return "LectureVO [lectureId=" + lectureId + ", lectureTitle=" + lectureTitle + ", lectureDesc=" + lectureDesc

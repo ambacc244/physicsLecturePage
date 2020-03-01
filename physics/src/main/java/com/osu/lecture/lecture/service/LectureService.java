@@ -9,21 +9,21 @@ import com.osu.lecture.lecture.LectureVO;
 import com.osu.lecture.lecture.dao.LectureDao;
 
 @Service
-public class LectureService implements ILectureService{
+public class LectureService implements ILectureService {
 	@Inject
 	private LectureDao lectureDao;
 
 	@Override
 	public void create(LectureVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		lectureDao.create(vo);	
+		lectureDao.create(vo);
 	}
 
 	@Override
 	public List<LectureVO> upcomingLectureList() throws Exception {
 		return lectureDao.upcomingLectureList();
 	}
-	
+
 	@Override
 	public List<LectureVO> pastLectureList() throws Exception {
 		return lectureDao.pastLectureList();
@@ -33,7 +33,7 @@ public class LectureService implements ILectureService{
 	public List<LectureVO> myLectureList(String userId) throws Exception {
 		return lectureDao.myLectureList(userId);
 	}
-	
+
 	@Override
 	public LectureVO selectLecture(int lectureId) throws Exception {
 		return lectureDao.selectLecture(lectureId);
@@ -48,7 +48,7 @@ public class LectureService implements ILectureService{
 	public void updateLecture(LectureVO vo) throws Exception {
 		lectureDao.updateLecture(vo);
 	}
-	
+
 	@Override
 	public int getInstructorId(String userId) throws Exception {
 		return lectureDao.getInstructorId(userId);

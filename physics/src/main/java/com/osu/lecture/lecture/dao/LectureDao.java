@@ -9,28 +9,28 @@ import org.springframework.stereotype.Repository;
 import com.osu.lecture.lecture.LectureVO;
 
 @Repository
-public class LectureDao implements ILectureDao{
+public class LectureDao implements ILectureDao {
 	@Inject
 	private SqlSession sqlSession;
-	
+
 	private static final String namespace = "LectureMapper";
-	
+
 	@Override
 	public void create(LectureVO vo) throws Exception {
 		sqlSession.insert(namespace + ".insertLecture", vo);
-		
+
 	}
 
 	@Override
 	public List<LectureVO> upcomingLectureList() throws Exception {
-		return sqlSession.selectList(namespace +".selectUpcomingLecture");
+		return sqlSession.selectList(namespace + ".selectUpcomingLecture");
 	}
-	
+
 	@Override
 	public List<LectureVO> pastLectureList() throws Exception {
 		return sqlSession.selectList(namespace + ".selectPastLecture");
 	}
-	
+
 	@Override
 	public List<LectureVO> myLectureList(String userId) throws Exception {
 		return sqlSession.selectList(namespace + ".selectMyLecture", userId);

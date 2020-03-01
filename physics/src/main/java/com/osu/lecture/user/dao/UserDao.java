@@ -9,22 +9,22 @@ import com.osu.lecture.user.UserVO;
 
 @Repository
 public class UserDao implements IUserDao {
-	@Inject 
+	@Inject
 	SqlSession sqlSession;
-	
+
 	private static final String namespace = "UserMapper";
-	
-	@Override 
+
+	@Override
 	public boolean loginCheck(UserVO user) throws Exception {
 		String sql = sqlSession.selectOne(namespace + ".loginCheck", user);
 		return (sql == null) ? false : true;
 	}
-	
+
 	@Override
 	public UserVO viewUser(UserVO user) throws Exception {
 		return sqlSession.selectOne(namespace + ".viewUser", user);
 	}
-	
+
 	@Override
 	public void register(UserVO user) throws Exception {
 		sqlSession.selectOne(namespace + ".register", user);
