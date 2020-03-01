@@ -25,4 +25,5 @@
 	 </div>
 	 
 <!-- Coding End -->
+<script src="<c:url value="/resources/js/lecture.js"/>"></script> 
 <%@include file ="partials/footer.jsp" %>

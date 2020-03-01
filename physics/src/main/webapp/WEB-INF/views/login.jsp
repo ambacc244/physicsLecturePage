@@ -5,14 +5,16 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-	<h2>Login</h2>
-	
-	<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
-		ID : <input type="text" class="user-id" name="userId"><br>
-		PW : <input type="password" class="user-pw" name="userPw"><br>
-		<button type="submit" class="submit-button" onclick="return login();">Login</button>
-	</form>
-
+<div class="login-back">
+	<div class="login">
+		<h2 class="login-title">Login</h2>
+		<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
+			<input id="user-id" type="text" name="userId" placeholder="Id"><br>
+			<input id="user-pw" type="password" name="userPw" placeholder="Password"><br>
+			<button type="submit" id="login-button" onclick="return login();">Login</button>
+		</form>
+	</div>
+</div>
 <!-- Coding End -->
 <script src="<c:url value="/resources/js/login.js"/>"></script>
 <%@include file ="partials/footer.jsp" %>

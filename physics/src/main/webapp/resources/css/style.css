@@ -1,7 +1,7 @@
 body {
 	margin: 110px 8px 8px 8px;
 	padding: 50px 30px;
- 	font-family: Geneva
+ 	font-family: Geneva;
 }
 
 a {
@@ -27,6 +27,34 @@ h2 {
 
 #header_aside a {
 	color: white;
+}
+
+input[type=text], input[type=password], textarea[type=text] {
+  font-weight: 500;
+  box-shadow: none;
+  margin: 10px 0px;
+  padding: 0px 20px;
+  background: transparent;
+  border: transparent;
+  background: #fafafa;
+  height: 50px;
+  width: 460px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+
+input[type=text]:active, textarea[type=text]:active, input[type=text]:focus, textarea[type=text]:focus,
+input[type=password]:active, textarea[type=password]:active, input[type=password]:focus, textarea[type=password]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+  background: #f0f0f0;
+}
+
+button:focus{
+  outline: none;
 }
 
 .site-title {
@@ -63,9 +91,9 @@ h2 {
 }
 
 .each-lecture {
-  margin: auto;
-  width: 620px;
-  padding: 50px;
+	margin: auto;
+	width: 620px;
+	padding: 50px;
 }
 
 .each {
@@ -98,6 +126,10 @@ h2 {
 	letter-spacing: 1px;
 }
 
+.lecture-title a {
+	text-decoration: none;
+}
+
 .lecture-icon {
 	text-align: center;
 }
@@ -105,12 +137,3 @@ h2 {
 .lecture-title {
 	margin: 10px 0px;
 }
-
-
-
-
-
-
-
-
-
