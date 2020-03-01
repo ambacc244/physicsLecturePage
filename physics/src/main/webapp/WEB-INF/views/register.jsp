@@ -10,6 +10,7 @@
 	<form class="register-form" name="registerForm" action="${path}/lecture/mypage/register" method="post">
 		ID : <input type="text" class="user-id" name="userId"><br>
 		PW : <input type="password" class="user-pw" name="userPw"><br>
+		NAME : <input type="text" class="user-name" name="userName"><br>
 		<button type="submit" class="submit-button" onclick="return register();">Register</button>
 	</form>
 	

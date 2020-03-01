@@ -21,6 +21,7 @@ public class UserService implements IUserService {
 			UserVO user2 = userDao.viewUser(user);
 			session.setAttribute("userId", user2.getUserId());
 			session.setAttribute("userPw", user2.getUserPw());
+			session.setAttribute("userName", user2.getUserName());
 		}
 		return result;
 	}

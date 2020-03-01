@@ -8,11 +8,11 @@
     </select>
     
     <select id="viewUser" resultType="com.osu.lecture.user.UserVO">
-        SELECT user_id AS userID, user_pw AS userPw FROM user WHERE user_id = #{userId} AND user_pw = #{userPw}
+        SELECT user_id AS userID, user_pw AS userPw, user_name AS userName FROM user WHERE user_id = #{userId} AND user_pw = #{userPw}
     </select>
     
     <insert id="register">
-        INSERT INTO user (user_id, user_pw) VALUE (#{userId}, #{userPw})
+        INSERT INTO user (user_id, user_pw, user_name) VALUE (#{userId}, #{userPw}, #{userName})
     </insert>
     
     <select id="selectUserbyId" resultType="String">
