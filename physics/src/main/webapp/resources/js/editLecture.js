@@ -1,4 +1,4 @@
-function editLecture(){
+function editLecture() {
 	//get values
 	var lectureTitle = document.getElementsByClassName("lecture-title")[0];
 	var lectureDesc = document.getElementsByClassName("lecture-desc")[0];
@@ -8,7 +8,7 @@ function editLecture(){
 
 	var input_values = [lectureTitle, lectureDesc, lectureLink, lectureDate, lectureTime];
 
-	var reject_msg =[
+	var reject_msg = [
 		"Title을 입력하세요",
 		"Description을 입력하세요",
 		"Link를 입력하세요",
@@ -16,8 +16,8 @@ function editLecture(){
 		"Time을 입력하세요"
 	];
 
-	for(var i=0; i<5; i++){
-		if(input_values[i].value == ""){
+	for (var i = 0; i < 5; i++) {
+		if (input_values[i].value == "") {
 			alert(reject_msg[i]);
 			return false;
 		}

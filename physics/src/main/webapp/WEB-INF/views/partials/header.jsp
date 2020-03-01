@@ -12,15 +12,21 @@
 <body>
 
 <header>
- 
-  <aside id="header_aside" role="complementary">
-  	<!-- not logined -->
-   	<button onclick="window.location.href='${path}/lecture/login'">Login</button>
- 	<!-- logined -->
-	<button onclick="window.location.href='${path}/lecture/mypage'">My Page</button>
-	<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
-	
-    <h1 class = "site-title"><a href = "${path}/lecture"> Physic Virtual Class Room </a></h1>
+ ${sessionScope.userId}
+    <aside id="header_aside" role="complementary">
+    <!-- not logined -->
+    <c:choose>
+    	<c:when test="${sessionScope.userId == null}">
+	    	<button onclick="window.location.href='${path}/lecture/login'">Login</button>
+    	</c:when>
+  		<c:otherwise>
+			<!-- logined -->
+			<button onclick="window.location.href='${path}/lecture/mypage'">My Page</button>
+			<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
+		</c:otherwise>
+	</c:choose>
+    <h1 class = "site-title"><a href = "${path}/lecture"> Physic Virtual Class Room </a
+    ></h1>
     <nav class = "navbar">
       <ul class="navbar-items" >
         <li class = "navitem"><a href = "${path}/lecture/"> Upcoming Lecture </a></li>

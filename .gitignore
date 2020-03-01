@@ -99,16 +99,16 @@ local.properties
 hs_err_pid*
 
 ### Maven ###
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-.flattened-pom.xml
+physics/target/
+physics/pom.xml.tag
+physics/pom.xml.releaseBackup
+physics/pom.xml.versionsBackup
+physics/pom.xml.next
+physics/release.properties
+physics/dependency-reduced-pom.xml
+physics/buildNumber.properties
+physics/.mvn/timing.properties
+physics/.mvn/wrapper/maven-wrapper.jar
+physics/.flattened-pom.xml
 
 # End of https://www.gitignore.io/api/java,maven,eclipse
