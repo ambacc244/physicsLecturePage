@@ -8,11 +8,11 @@
     <h2>Add lecture page</h2>
 
     <form class="create-lecture-form" name ="createLectureForm" action="${path}/lecture/mypage/add" method="POST">
-    	Title: <input type="text" class="lecture-title"  name="lectureTitle" placeholder="lecture title"><br>
-  		Description: <textarea class="lecture-desc" name="lectureDesc" cols="30" rows="10" placeholder="lecture desc"></textarea><br>
-    	Link: <input type="text" class="lecture-link" name="lectureLink" placeholder="Link Address"><br>
-  		Dates: <input type="date" class="lecture-date" name="lectureDate" placeholder="2020-01-01"><br>
-		Time: <input type="time" class="lecture-time" name="lectureTime" placeholder="00:00:00"><br>
+    	<input type="text" class="lecture-title"  name="lectureTitle" placeholder="Lecture Title"><br>
+  		<textarea class="lecture-desc" name="lectureDesc" cols="30" rows="10" placeholder="Lecture Descciption"></textarea><br>
+    	<input type="text" class="lecture-link" name="lectureLink" placeholder="Video Link"><br>
+  		<input type="date" class="lecture-date" name="lectureDate" placeholder="Date"><br>
+		<input type="time" class="lecture-time" name="lectureTime" placeholder="Time"><br>
 		<button type="submit" class="submit-button" onclick="return checkInputIsNull();">Submit</button>
     </form>
 

@@ -12,7 +12,6 @@
 <body>
 
 <header>
- ${sessionScope.userId}
     <aside id="header_aside" role="complementary">
     <!-- not logined -->
     <c:choose>

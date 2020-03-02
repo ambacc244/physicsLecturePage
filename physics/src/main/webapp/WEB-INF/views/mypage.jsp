@@ -5,7 +5,7 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-	<h2>Login Success: ${sessionScope.userName} - ${sessionScope.userId} - ${sessionScope.userPw}</h2>
+	<h2>Welcome, ${sessionScope.userName} </h2>
 
 	<button onclick="location.href = '/lecture/mypage/add'">Add lecture</button>
 	<button onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
