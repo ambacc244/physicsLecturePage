@@ -5,32 +5,34 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-	<h2>Welcome, ${sessionScope.userName} </h2>
-
-	<button onclick="location.href = '/lecture/mypage/add'">Add lecture</button>
-	<button onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
+	<div>
+		<h2>Welcome, ${sessionScope.userName} </h2>
 	
+		<button id="add-lecture-button" onclick="location.href='/lecture/mypage/add'">Add lecture</button>
+		<button id="register-button" onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
+	</div>
+
 	<table class="my-lecture-table">
 		<tr>
 		    <th>Title</th>
 		    <th>Description</th>
 		    <th>Date</th>
 		    <th>Time</th>
-		    <th>Edit</th>
-		    <th>Delete</th>
+		    <th>Action</th>
 		</tr>
 		
 	 	<c:forEach var="row" items="${list}">
 		 	<tr>
-		    	<th><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></th>
-		    	<th>${row.lectureDesc}</th>
-		    	<th>${row.lectureDate}</th>
-		    	<th>${row.lectureTime}</th>   
-		    	<th><button onclick="window.location.href='${path}/lecture/mypage/edit/${row.lectureId}'">Edit</button></th>
-		    	<th><button onclick="deleteLecture(${row.lectureId})">Delete</button></th>
+		    	<td><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></td>
+		    	<td>${row.lectureDesc}</td>
+		    	<td class="mypage-date">${row.lectureDate}</td>
+		    	<td>${row.lectureTime}</td>   
+		    	<td class="mypage-action">
+			    	<button id="edit-button" onclick="window.location.href='${path}/lecture/mypage/edit/${row.lectureId}'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+			    	<button id="delete-button" onclick="deleteLecture(${row.lectureId})"><i class="fa fa-trash" aria-hidden="true"></i></button>
+			    </td>
 		    </tr>
 	    </c:forEach>
-	    
 	</table>
 	
 <!-- Coding End -->
