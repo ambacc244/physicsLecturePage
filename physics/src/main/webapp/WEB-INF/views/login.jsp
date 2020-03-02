@@ -5,8 +5,7 @@
 <%@ include file="partials/header.jsp" %>
 <!-- Coding Start -->
 
-<div class="login-back">
-	<div class="login">
+	<div id="add-edit-form">
 		<h2 class="login-title">Login</h2>
 		<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
 			<input id="user-id" type="text" name="userId" placeholder="Id"><br>
@@ -14,7 +13,7 @@
 			<button type="submit" id="login-button" onclick="return login();">Login</button>
 		</form>
 	</div>
-</div>
+
 <!-- Coding End -->
 <script src="<c:url value="/resources/js/login.js"/>"></script>
 <%@include file ="partials/footer.jsp" %>

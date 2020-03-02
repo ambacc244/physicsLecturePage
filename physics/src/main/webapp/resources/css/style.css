@@ -15,6 +15,10 @@ h2 {
 	font-size: 30px;
 }
 
+.hidden {
+	display: none;
+}
+
 #header_aside {
 	text-transform: uppercase;
 	position: fixed;
@@ -27,34 +31,6 @@ h2 {
 
 #header_aside a {
 	color: white;
-}
-
-input[type=text], input[type=password], textarea[type=text] {
-  font-weight: 500;
-  box-shadow: none;
-  margin: 10px 0px;
-  padding: 0px 20px;
-  background: transparent;
-  border: transparent;
-  background: #fafafa;
-  height: 50px;
-  width: 460px;
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: 0;
-  letter-spacing: 1px;
-}
-
-input[type=text]:active, textarea[type=text]:active, input[type=text]:focus, textarea[type=text]:focus,
-input[type=password]:active, textarea[type=password]:active, input[type=password]:focus, textarea[type=password]:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: transparent;
-  background: #f0f0f0;
-}
-
-button:focus{
-  outline: none;
 }
 
 .site-title {
