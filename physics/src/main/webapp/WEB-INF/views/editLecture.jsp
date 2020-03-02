@@ -14,7 +14,7 @@
 			<input type="text" class="lecture-link" name="lectureLink" placeholder="Vedio Link" value="${lecture.lectureLink}"><br>
 		  	<input type="date" class="lecture-date" name="lectureDate" placeholder="Date" value="${lecture.lectureDate}"><br>
 		  	<input type="time" class="lecture-time" name="lectureTime" placeholder="Time" value="${lecture.lectureTime}"><br>
-		 	<button type="submit" class="submit-button" onclick="return editLecture();">Submit</button>
+		 	<button type="submit" id="add-edit-button" onclick="return editLecture();">Submit</button>
 		</form>
 	</div>
 	

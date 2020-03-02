@@ -11,7 +11,7 @@
 			<input type="text" class="user-id" name="userId" placeholder="Id"><br>
 			<input type="password" class="user-pw" name="userPw" placeholder="Password"><br>
 			<input type="text" class="user-name" name="userName" placeholder="Name"><br>
-			<button type="submit" id="login-button" onclick="return register();">Register</button>
+			<button type="submit" id="add-edit-button" onclick="return register();">Register</button>
 		</form>
 		${AvailableIdMsg}
 	</div>

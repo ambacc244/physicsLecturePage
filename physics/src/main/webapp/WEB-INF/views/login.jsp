@@ -10,7 +10,7 @@
 		<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
 			<input id="user-id" type="text" name="userId" placeholder="Id"><br>
 			<input id="user-pw" type="password" name="userPw" placeholder="Password"><br>
-			<button type="submit" id="login-button" onclick="return login();">Login</button>
+			<button type="submit" id="add-edit-button" onclick="return login();">Login</button>
 		</form>
 	</div>
 

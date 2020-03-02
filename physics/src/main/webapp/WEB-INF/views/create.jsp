@@ -13,7 +13,7 @@
 	    	<input type="text" class="lecture-link" name="lectureLink" placeholder="Video Link"><br>
 	  		<input type="date" class="lecture-date" name="lectureDate" placeholder="Date"><br>
 			<input type="time" class="lecture-time" name="lectureTime" placeholder="Time"><br>
-			<button type="submit" class="submit-button" onclick="return checkInputIsNull();">Submit</button>
+			<button type="submit" id="add-edit-button" onclick="return checkInputIsNull();">Submit</button>
 	    </form>
 	</div>
 
