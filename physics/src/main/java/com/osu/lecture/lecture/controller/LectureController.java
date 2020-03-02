@@ -1,6 +1,5 @@
 package com.osu.lecture.lecture.controller;
 
-import java.security.Principal;
 import java.util.List;
 
 import javax.inject.Inject;

@@ -17,5 +17,5 @@
     </form>
 
 <!-- Coding End -->
-<script src="<c:url value="/resources/js/create.js"/>"></script> 
+<script type="text/javascript" src="<c:url value="/resources/js/create.js"/>"></script> 
 <%@include file ="partials/footer.jsp" %>
