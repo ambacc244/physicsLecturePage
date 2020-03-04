@@ -13,8 +13,8 @@
 		    <input type="text" class="lecture-title" name="lectureTitle" placeholder="Title" value="${lecture.lectureTitle}"><br>
 		    <textarea class="lecture-desc" name="lectureDesc" cols="30"placeholder="Desription" rows="10">${lecture.lectureDesc}</textarea><br>
 			<input type="text" class="lecture-link" name="lectureLink" placeholder="Vedio Link" value="${lecture.lectureLink}"><br>
-		  	<input type="date" class="lecture-date" name="lectureDate" placeholder="Date" value="${lecture.lectureDate}"><br>
-		  	<input type="time" class="lecture-time" name="lectureTime" placeholder="Time" value="${lecture.lectureTime}"><br>
+		  	<input type="date" class="lecture-date" name="lectureDate" placeholder="xxxx-xx-xx" value="${lecture.lectureDate}"><br>
+		  	<input type="time" class="lecture-time" name="lectureTime" placeholder="xx:xx:xx" value="${lecture.lectureTime}"><br>
 		 	<button type="submit" id="add-edit-button" onclick="return editLecture();">Submit</button>
 		</form>
 	</div>
