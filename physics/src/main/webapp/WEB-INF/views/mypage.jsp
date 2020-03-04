@@ -4,6 +4,7 @@
 
 <%@ include file="partials/header.jsp" %>
 <script type="text/javascript" src="resources/js/mypage.js"></script>
+<script src="<c:url value="/resources/js/lecture.js"/>"></script> 
 <!-- Coding Start -->
 
 	<h2>Welcome, ${sessionScope.userName} </h2>
@@ -25,7 +26,7 @@
 		    	<td><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></td>
 		    	<td>${row.lectureDesc}</td>
 		    	<td class="mypage-date">${row.lectureDate}</td>
-		    	<td>${row.lectureTime}</td>   
+		    	<td><script type="text/javascript">tConvert('${row.lectureTime}');</script></td>   
 		    	<td class="mypage-action">
 			    	<button id="edit-button" onclick="window.location.href='${path}/lecture/mypage/edit/${row.lectureId}'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 			    	<button id="delete-button" onclick="deleteLecture(${row.lectureId})"><i class="fa fa-trash" aria-hidden="true"></i></button>
