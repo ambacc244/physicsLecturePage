@@ -1,10 +1,10 @@
 function tConvert(time) {
-	console.log(time);
 	var hour = time.substr(0, 2);
 	var AmPm = (hour < 12 || hour === 24) ? "AM" : "PM";
-	var h = H % 13;
-	console.log(hour);
-	console.log(AmPm);
-	console.log(h);
-	return h + time.substr(2, 3) + AmPm;
+	var h = hour % 12;
+ 
+	if(h == 0)
+		h = 12;
+
+	document.write( h + time.substr(2, 3) + AmPm );
 }

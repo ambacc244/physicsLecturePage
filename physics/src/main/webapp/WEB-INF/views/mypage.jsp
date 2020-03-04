@@ -3,15 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 
 <%@ include file="partials/header.jsp" %>
+<script type="text/javascript" src="resources/js/mypage.js"></script>
 <!-- Coding Start -->
 
-	<div>
-		<h2>Welcome, ${sessionScope.userName} </h2>
-	
-		<button id="add-lecture-button" onclick="location.href='/lecture/mypage/add'">Add lecture</button>
-		<button id="register-button" onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
-	</div>
+	<h2>Welcome, ${sessionScope.userName} </h2>
 
+	<button id="add-lecture-button" onclick="location.href='/lecture/mypage/add'">Add lecture</button>
+	<button id="register-button" onclick="window.location.href='${path}/lecture/mypage/register'">Register</button>
+	
 	<table class="my-lecture-table">
 		<tr>
 		    <th>Title</th>
@@ -36,5 +35,4 @@
 	</table>
 	
 <!-- Coding End -->
-<script type="text/javascript" src="resources/js/mypage.js"></script>
 <%@include file ="partials/footer.jsp" %>

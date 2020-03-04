@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 
 <%@ include file="partials/header.jsp" %>
+<script src="<c:url value="/resources/js/editLecture.js"/>"></script>
 <!-- Coding Start -->
 
 	<div id="add-edit-form">
@@ -18,6 +19,5 @@
 		</form>
 	</div>
 	
- <!-- Coding End -->
-<script src="<c:url value="/resources/js/editLecture.js"/>"></script> 
+ <!-- Coding End --> 
 <%@include file ="partials/footer.jsp" %>

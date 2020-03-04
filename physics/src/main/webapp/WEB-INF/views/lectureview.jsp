@@ -4,6 +4,8 @@
 <%@ page isELIgnored="false" %>
 
 <%@ include file="partials/header.jsp" %>
+<script src="<c:url value="/resources/js/lectureview.js"/>"></script>
+<script src="<c:url value="/resources/js/lecture.js"/>"></script> 
 <!-- Coding Start -->
 
    	<div class="each-lecture">
@@ -13,10 +15,10 @@
 		<div class="each each-title">${lecture.lectureTitle}</div>
 		<div class="each each-instructor"><i class="fa fa-user" aria-hidden="true"></i> Prof. ${lecture.instructorId}</div>
 		<div class="each each-desc">${lecture.lectureDesc}</div>
-		<div class="each each-date"><i class="fa fa-calendar-o" aria-hidden="true"></i> ${lecture.lectureDate}      ${lecture.lectureTime }</div>
+		<div class="each each-date"><i class="fa fa-calendar-o" aria-hidden="true"></i> 
+			${lecture.lectureDate} <script type="text/javascript">tConvert('${lecture.lectureTime}');</script>
+		</div>
 	</div>
   	 	
  <!-- Coding End -->
-<script src="<c:url value="/resources/js/lectureview.js"/>"></script>
-
 <%@include file ="partials/footer.jsp" %>

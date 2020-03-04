@@ -149,7 +149,7 @@ td, th, tr {
 	font-size: 13px;
 	cursor: pointer;
 	width: 150px;
-	margin: 10px 7px 0px 0px;
+	margin: 10px 7px 10px 0px;
 }
 
 #add-lecture-button:hover {
