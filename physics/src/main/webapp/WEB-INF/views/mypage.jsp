@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<% pageContext.setAttribute("replaceChar", "\n"); %>
 <%@ include file="partials/header.jsp" %>
 <script type="text/javascript" src="resources/js/mypage.js"></script>
 <script src="<c:url value="/resources/js/lecture.js"/>"></script> 
@@ -24,7 +25,7 @@
 	 	<c:forEach var="row" items="${list}">
 		 	<tr>
 		    	<td><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></td>
-		    	<td>${row.lectureDesc}</td>
+		    	<td>${fn:replace(row.lectureDesc, replaceChar, "<br/>")}</td>
 		    	<td class="mypage-date">${row.lectureDate}</td>
 		    	<td><script type="text/javascript">tConvert('${row.lectureTime}');</script></td>   
 		    	<td class="mypage-action">

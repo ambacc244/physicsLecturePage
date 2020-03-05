@@ -123,6 +123,8 @@ h2 {
 	width: 300px;
 	margin: 25px;
 	letter-spacing: 1px;
+	flex-shrink: 1;
+	flex-grow:1
 }
 
 .lecture-title a {
