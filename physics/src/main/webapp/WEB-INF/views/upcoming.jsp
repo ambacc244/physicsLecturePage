@@ -11,7 +11,7 @@
 
 	 <div class="lecture-container">
 	 	<c:forEach var="row" items="${list}">
-		 	<div class="lecture" style="list-style-type:none">
+		 	<div class="lecture">
 			 	<div class="each-video">
 					<iframe class="lecture-video-link" width="300" height="150" src= "${row.lectureLink}"><a href="/lecture/detail?lectureId=${row.lectureId}"></a></iframe>
 				</div>

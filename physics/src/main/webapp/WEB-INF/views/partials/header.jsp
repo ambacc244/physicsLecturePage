@@ -14,18 +14,19 @@
 <header>
     <aside id="header_aside" role="complementary">
     <!-- not logined -->
-    <c:choose>
-    	<c:when test="${sessionScope.userId == null}">
-	    	<button onclick="window.location.href='${path}/lecture/login'">Login</button>
-    	</c:when>
-  		<c:otherwise>
-			<!-- logined -->
-			<button onclick="window.location.href='${path}/lecture/mypage'">My Page</button>
-			<button onclick="window.location.href='${path}/lecture/logout'">Logout</button>
-		</c:otherwise>
-	</c:choose>
-    <h1 class = "site-title"><a href = "${path}/lecture"> Physic Virtual Class Room </a
-    ></h1>
+    <div class="headerbar">
+	    <h1 class = "site-title"><a href = "${path}/lecture"> Physic Virtual Class Room </a></h1>
+	    <c:choose>
+	    	<c:when test="${sessionScope.userId == null}">
+		    	<button id="login-button" onclick="window.location.href='${path}/lecture/login'">Login</button>
+	    	</c:when>
+	  		<c:otherwise>
+				<!-- logined -->
+				<button id="mypage-button" onclick="window.location.href='${path}/lecture/mypage'"><i class="fa fa-user" aria-hidden="true"></i></button>
+				<button id="logout-button" onclick="window.location.href='${path}/lecture/logout'">Logout</button>
+			</c:otherwise>
+		</c:choose>
+    </div>
     <nav class = "navbar">
       <ul class="navbar-items" >
         <li class = "navitem"><a href = "${path}/lecture/"> Upcoming Lecture </a></li>

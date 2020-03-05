@@ -10,3 +10,9 @@
 * 6d2a3a0 : CSS - Register 폼
 * 148e951 : CSS - Add Lecture과 Edit Lecture 폼
 * 3dae1dc : CSS - Mypage의 Lecture 테이블
+
+## March 4
+>Yeongae
+
+* 66a05a2 : Lecture 시작시간 표현변경( 24:00:00 -> 12:00AM)
+* ca89eae : CSS - Add Lecture와 Edir Lecture의 값 입력 폼 
