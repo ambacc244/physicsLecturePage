@@ -8,3 +8,17 @@ function tConvert(time) {
 
 	document.write( h + time.substr(2, 3) + AmPm );
 }
+
+function youtubeParser(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[7].length==11)? match[7] : false;
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+	var i = 0;
+	var linkClass = document.getElementsByClassName('lecture-image-link');
+    for(;i < linkClass.length; i++){
+    	linkClass[i].src = "https://img.youtube.com/vi/" + youtubeParser(linkClass[i].src) + "/0.jpg"
+    }
+});
