@@ -13,7 +13,9 @@
 	 	<c:forEach var="row" items="${list}">
 		 	<div class="lecture">
 			 	<div class="each-video">
-					<iframe class="lecture-video-link" width="300" height="150" src= "${row.lectureLink}"><a href="/lecture/detail?lectureId=${row.lectureId}"></a></iframe>
+				 	<a href="/lecture/detail?lectureId=${row.lectureId}">
+						<img class="lecture-image-link" width="300" height="150" src= "${row.lectureLink}"></img>
+					</a>
 				</div>
 		  <!-- <div class="lecture-icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div> -->      
 		        <div class="lecture-title" ><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></div>
