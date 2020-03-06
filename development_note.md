@@ -1,5 +1,9 @@
 # 개발커밋 일지 (from the most recent)
 
+## March 5
+>Eric
+
+* db2d77c : Lecture video 링크를 통해서 Upcoming page에 각 비디오에 걸맞는 이미지 표시 / 이미지 클릭시 각 Lecture으로 이동
 ## March 2
 > Eric
 
