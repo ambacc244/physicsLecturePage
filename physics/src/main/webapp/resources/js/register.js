@@ -3,7 +3,7 @@ function register() {
 	
 	var userId = document.getElementsByClassName("user-id")[0];
 	var userPw = document.getElementsByClassName("user-pw")[0];
-	var userName = document.getElementsByName("user-name")[0];
+	var userName = document.getElementsByClassName("user-name")[0];
 	//check empty value
 	if (userId.value == "") {
 		alert("아이디를 입력하세요.");
