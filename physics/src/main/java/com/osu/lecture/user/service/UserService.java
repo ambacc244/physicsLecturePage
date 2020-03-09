@@ -41,4 +41,9 @@ public class UserService implements IUserService {
 	public boolean checkAvailableId(String userId) throws Exception {
 		return userDao.checkAvailableId(userId);
 	}
+	
+	@Override
+	public UserVO selectInstructor(int lectureId) throws Exception {
+		return userDao.selectInstructor(lectureId);
+	}
 }

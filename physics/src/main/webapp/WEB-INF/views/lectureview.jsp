@@ -15,7 +15,7 @@
 			<iframe class="lecture-video-link" width="620" height="350" src= "${lecture.lectureLink}" allowfullscreen="allowfullscreen"></iframe>
 		</div>   
 		<div class="each each-title">${lecture.lectureTitle}</div>
-		<div class="each each-instructor"><i class="fa fa-user" aria-hidden="true"></i> Prof. ${lecture.instructorId}</div>
+		<div class="each each-instructor"><i class="fa fa-user" aria-hidden="true"></i> Prof. ${instructor.userName}</div>
 		<div class="each each-desc">${fn:replace(lecture.lectureDesc, replaceChar, "<br/>")}</div>
 		<div class="each each-date"><i class="fa fa-calendar-o" aria-hidden="true"></i> 
 			${lecture.lectureDate} <script type="text/javascript">tConvert('${lecture.lectureTime}');</script>

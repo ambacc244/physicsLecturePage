@@ -19,11 +19,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.osu.lecture.lecture.LectureVO;
 import com.osu.lecture.lecture.service.LectureService;
+import com.osu.lecture.user.service.UserService;
 
 @Controller
 public class LectureController {
 	@Inject
 	private LectureService lectureService;
+	@Inject
+	private UserService userService;
 	private static final Logger logger = LoggerFactory.getLogger(LectureController.class);
 
 	@RequestMapping(value = "/mypage/add", method = RequestMethod.GET)
@@ -65,6 +68,7 @@ public class LectureController {
 	public String detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception {
 		logger.debug("Lecture id = {} is being called", lectureId);
 		model.addAttribute("lecture", lectureService.selectLecture(lectureId));
+		model.addAttribute("instructor", userService.selectInstructor(lectureId));
 		return "lectureview";
 	}
 
