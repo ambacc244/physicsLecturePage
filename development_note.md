@@ -1,5 +1,13 @@
 # 개발커밋 일지 (from the most recent)
 
+## March 9
+>Yeongae
+
+* a71af7c : CSS - Main 페이지에 display 변환
+* ca7a662 : Login 페이지에 blank input에 경고창 띄우기
+* 679b5ed : Lecture Detail 페이지에 instructor 이름 추가
+
+
 ## March 5
 >Eric
 
