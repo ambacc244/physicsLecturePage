@@ -4,6 +4,19 @@
 >Eric
 
 * db2d77c : Lecture video 링크를 통해서 Upcoming page에 각 비디오에 걸맞는 이미지 표시 / 이미지 클릭시 각 Lecture으로 이동
+
+>Yeongae
+
+* d21b008 : Description 띄어쓰기 표
+* 0c28114 : 웹의 창의 크기에 따른 margin 값의 변화 설정
+
+
+## March 4
+>Yeongae
+
+* 66a05a2 : Lecture 시작시간 표현변경( 24:00:00 -> 12:00AM)
+* ca89eae : CSS - Add Lecture와 Edit Lecture의 값 입력 폼
+
 ## March 2
 > Eric
 
@@ -14,9 +27,3 @@
 * 6d2a3a0 : CSS - Register 폼
 * 148e951 : CSS - Add Lecture과 Edit Lecture 폼
 * 3dae1dc : CSS - Mypage의 Lecture 테이블
-
-## March 4
->Yeongae
-
-* 66a05a2 : Lecture 시작시간 표현변경( 24:00:00 -> 12:00AM)
-* ca89eae : CSS - Add Lecture와 Edir Lecture의 값 입력 폼 
