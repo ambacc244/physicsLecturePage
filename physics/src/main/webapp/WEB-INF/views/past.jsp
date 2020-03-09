@@ -4,17 +4,22 @@
 
 <%@ include file="partials/header.jsp" %>
 <script src="<c:url value="/resources/js/lecture.js"/>"></script> 
+
 <!-- Coding Start -->
 
 	<h2>Past Lecture Page</h2>
 
 	 <div class="lecture-container">
 	 	<c:forEach var="row" items="${list}">
-		 	<div class="lecture" style="list-style-type:none">
-		        <div class="lecture-icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></div>
+		 	<div class="lecture">
+		 		<div class="each-video">
+				 	<a href="/lecture/detail?lectureId=${row.lectureId}">
+						<img class="lecture-image-link" width="300" height="180" src= "${row.lectureLink}"></img>
+					</a>
+				</div>
 		        <div class="lecture-title" ><a href="/lecture/detail?lectureId=${row.lectureId}">${row.lectureTitle}</a></div>
 				<div class="lecture-date"> 
-					Date : ${row.lectureDate} <script type="text/javascript">tConvert('${row.lectureTime}');</script>
+					<i class="fa fa-calendar-o" aria-hidden="true"></i> ${row.lectureDate} <script type="text/javascript">tConvert('${row.lectureTime}');</script>
 				</div>
 			</div>
 	    </c:forEach>

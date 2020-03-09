@@ -4,6 +4,7 @@
 
 <%@ include file="partials/header.jsp" %>
 <script src="<c:url value="/resources/js/editLecture.js"/>"></script>
+
 <!-- Coding Start -->
 
 	<div id="add-edit-form">

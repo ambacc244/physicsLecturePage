@@ -123,8 +123,6 @@ h2 {
 	width: 300px;
 	margin: 25px;
 	letter-spacing: 1px;
-	flex-shrink: 1;
-	flex-grow:1
 }
 
 .lecture-title a {
@@ -143,6 +141,6 @@ h2 {
 	display: flex;
 	align-content: flex-end;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: start;
   	margin: 0px;
 }
