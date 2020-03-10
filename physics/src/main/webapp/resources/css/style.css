@@ -144,3 +144,21 @@ h2 {
 	justify-content: start;
   	margin: 0px;
 }
+
+.page-not-found {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.go-home {
+	background-color: rgb(61, 157, 204);
+	color: black;
+	border-radius: 40%;
+	padding: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
