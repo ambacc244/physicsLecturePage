@@ -5,6 +5,6 @@
 <%@ include file="../partials/header.jsp" %>
 
 <h1> 500 </h1>
-<h2>Page is not found! check your url!</h2>
+<h2> Internal Server issue! - We are working on it! Try back later!</h2>
 
 <%@include file ="../partials/footer.jsp" %>
