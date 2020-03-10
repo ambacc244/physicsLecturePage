@@ -66,7 +66,10 @@ public class LectureController {
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detailLecture(@RequestParam("lectureId") int lectureId, Model model) throws Exception {
-		logger.debug("Lecture id = {} is being called", lectureId);
+		logger.info("Lecture id = {} is being called", lectureId);
+		if(lectureService.selectLecture(lectureId) == null) {
+			return "redirect:/errors/404page";
+		}
 		model.addAttribute("lecture", lectureService.selectLecture(lectureId));
 		model.addAttribute("instructor", userService.selectInstructor(lectureId));
 		return "lectureview";
