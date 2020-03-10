@@ -1,5 +1,10 @@
 # 개발커밋 일지 (from the most recent)
 
+## March 10
+>Eric
+
+* 2137bdc : URL에 존재하지 않는 id값 input시 404페이지로 이동하도록 수정
+
 ## March 9
 >Yeongae
 
