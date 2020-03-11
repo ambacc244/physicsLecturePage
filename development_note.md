@@ -1,5 +1,10 @@
 # 개발커밋 일지 (from the most recent)
 
+## March 11
+>Eric
+
+* 1e6889c : 추후 셋업을 위한 셋업쿼리 / 더미데이터 생성중. (완료안됨!)
+
 ## March 10
 >Eric
 
