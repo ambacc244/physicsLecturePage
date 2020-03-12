@@ -22,7 +22,7 @@
 	    	</c:when>
 	  		<c:otherwise>
 				<!-- logined -->
-				<button id="mypage-button" onclick="window.location.href='${path}/lecture/mypage'"><i class="fa fa-user" aria-hidden="true"></i></button>
+				<button title="Mypage" id="mypage-button" onclick="window.location.href='${path}/lecture/mypage'"><i class="fa fa-user" aria-hidden="true"></i></button>
 				<button id="logout-button" onclick="window.location.href='${path}/lecture/logout'">Logout</button>
 			</c:otherwise>
 		</c:choose>
