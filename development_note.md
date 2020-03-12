@@ -1,5 +1,10 @@
 # 개발커밋 일지 (from the most recent)
 
+## March 12
+>Eric
+
+* 9b4958 : 맵핑이슈 해결 (images폴더 맵핑제거)
+
 ## March 11
 >Eric
 
