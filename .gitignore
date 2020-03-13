@@ -100,6 +100,7 @@ hs_err_pid*
 
 ### Maven ###
 physics/target/
+physics/target/m2e-wtp/*
 physics/pom.xml.tag
 physics/pom.xml.releaseBackup
 physics/pom.xml.versionsBackup
