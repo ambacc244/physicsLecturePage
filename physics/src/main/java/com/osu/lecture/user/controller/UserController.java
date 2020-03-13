@@ -6,6 +6,8 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +25,7 @@ public class UserController {
 	UserService userService;
 	@Inject
 	LectureService lectureService;
+	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	// login page
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -32,6 +35,7 @@ public class UserController {
 		if (session.getAttribute("userId") != null) {
 			return "redirect:/mypage"; // if already logged in, direct to my page
 		}
+		logger.debug("User login = {}", session.getAttribute("userId"));
 		return "login"; // return login.jsp page
 	}
 
@@ -84,6 +88,7 @@ public class UserController {
 		} else {
 			model.addAttribute("AvailableIdMsg", "사용불가능한 아이디 입니다.");
 		}
+		logger.debug("User registered = {}", user.getUserId());
 		return "register"; // return register.jsp page
 	}
 }

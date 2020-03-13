@@ -35,4 +35,9 @@ public class UserDao implements IUserDao {
 		String sql = sqlSession.selectOne(namespace + ".selectUserbyId", userId);
 		return (sql == null) ? true : false;
 	}
+
+	@Override
+	public UserVO selectInstructor(int lectureId) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectUserbyLectureId", lectureId);
+	}
 }

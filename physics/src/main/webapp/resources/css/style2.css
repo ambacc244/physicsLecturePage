@@ -1,4 +1,4 @@
-input[type=text], input[type=password], textarea[type=text] {
+input[type=text], .lecture-desc, input[type=password], input[type=date], input[type=time]{
   font-weight: 500;
   box-shadow: none;
   margin: 10px 0px;
@@ -14,19 +14,28 @@ input[type=text], input[type=password], textarea[type=text] {
   letter-spacing: 1px;
 }
 
-input[type=text]:active, textarea[type=text]:active, input[type=text]:focus, textarea[type=text]:focus,
-input[type=password]:active, textarea[type=password]:active, input[type=password]:focus, textarea[type=password]:focus {
+input[type=text]:active, input[type=text]:focus, 
+.lecture-desc:active, .lecture-desc:focus,
+input[type=password]:active, input[type=password]:focus,
+input[type=date]:active,  input[type=date]:focus,
+input[type=time]:active,  input[type=time]:focus {
   outline: none;
   box-shadow: none;
   border-color: transparent;
   background: #f0f0f0;
 }
 
-button:focus{
+.lecture-desc {
+  height: 100px;
+  resize: none;
+  padding: 15px 20px;
+}
+
+button:focus {
   outline: none;
 }
 
-.login {
+#add-edit-form {
 	width: fit-content;
 	background-color: white;
 	margin: 0 auto;
@@ -41,10 +50,10 @@ button:focus{
 	letter-spacing: 5px;
 	position: relative;
 }
-#login-button, #login-button:visited {
+
+#add-edit-button, #add-edit-button:visited {
 	background: #3daaf1f5;
 	color: white;
-	padding: 14px 20px;
 	border: 1px solid;
 	border-radius: 3px;
 	font-weight: 300;
@@ -57,7 +66,7 @@ button:focus{
 	margin: 10px 7px 0px 0px;
 }
 
-#login-button:hover, #login-button:active {
+#add-edit-button:hover, #add-edit-button:active {
 	color: #3daaf1f5;
 	background: transparent;
 	border: 1px solid #999999;
@@ -66,4 +75,93 @@ button:focus{
 .user-id, .user-pw {
 	float: left;
 	color: rgba(0, 0, 0, 0.7);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+th {
+  background-color: #2F94A8;
+  color: white;
+  letter-spacing: 3px;
+}
+
+td, th, tr {
+	padding: 15px;
+}
+
+#edit-button, #delete-button {
+	color: white;
+	border: 1px solid;
+	border-radius: 3px;
+	font-weight: 300;
+	padding: 15px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 13px;
+	cursor: pointer;
+	width: 50px;
+	margin: 5px;
+}
+
+#edit-button {
+	background: #3daaf1f5;
+}
+
+#delete-button {
+	background: #f13d3dde;
+}
+
+#edit-button:hover {
+	background: transparent;
+	color: #3daaf1f5;
+} 
+
+#delete-button:hover {
+	background: transparent;
+	color: #f13d3dde;
+}
+
+.mypage-date {
+	width: 90px;
+}
+
+#add-lecture-button, #register-button {
+	background: #3daaf1f5;
+	color: white;
+	border: 1px solid;
+	border-radius: 3px;
+	font-weight: 300;
+	padding: 15px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 13px;
+	cursor: pointer;
+	width: 150px;
+	margin: 10px 7px 10px 0px;
+}
+
+#add-lecture-button:hover {
+	color: #3daaf1f5;
+	background: transparent;
+	border: 1px solid #999999;
+}
+
+#register-button:hover {
+	color: #3daaf1f5;
+	background: transparent;
+	border: 1px solid #999999;
 }

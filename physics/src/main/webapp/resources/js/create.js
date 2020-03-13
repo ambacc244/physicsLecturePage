@@ -1,4 +1,5 @@
 function checkInputIsNull() {
+	console.log("Create js file is called");
 	var lectureTitle = document.getElementsByClassName("lecture-title")[0];
 	var lectureDesc = document.getElementsByClassName("lecture-desc")[0];
 	var lectureLink = document.getElementsByClassName("lecture-link")[0];
@@ -7,7 +8,7 @@ function checkInputIsNull() {
 
 	var youtube_url_regex = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
 	var input_values = [
-		get_title_value, get_desc_value, get_text_value, get_date_value, get_time_value
+		lectureTitle, lectureDesc, lectureLink, lectureDate, lectureTime
 	];
 
 	var reject_msg = [

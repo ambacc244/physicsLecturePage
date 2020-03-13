@@ -3,18 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 
 <%@ include file="partials/header.jsp" %>
+<script src="<c:url value="/resources/js/login.js"/>"></script>
 <!-- Coding Start -->
 
-<div class="login-back">
-	<div class="login">
+	<div id="add-edit-form">
 		<h2 class="login-title">Login</h2>
 		<form class="login-form" name="loginForm" action="${path}/lecture/login" method="post">
-			<input id="user-id" type="text" name="userId" placeholder="Id"><br>
-			<input id="user-pw" type="password" name="userPw" placeholder="Password"><br>
-			<button type="submit" id="login-button" onclick="return login();">Login</button>
+			<input class="user-id" type="text" name="userId" placeholder="Id"><br>
+			<input class="user-pw" type="password" name="userPw" placeholder="Password"><br>
+			<button type="submit" id="add-edit-button" onclick="return login();">Login</button>
 		</form>
 	</div>
-</div>
+
 <!-- Coding End -->
-<script src="<c:url value="/resources/js/login.js"/>"></script>
 <%@include file ="partials/footer.jsp" %>

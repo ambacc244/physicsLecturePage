@@ -10,4 +10,6 @@ public interface IUserDao {
 	public void register(UserVO user) throws Exception;
 
 	public boolean checkAvailableId(String userId) throws Exception;
+
+	public UserVO selectInstructor(int lectureId) throws Exception;
 }

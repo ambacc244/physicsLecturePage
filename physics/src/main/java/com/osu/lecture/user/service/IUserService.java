@@ -12,4 +12,6 @@ public interface IUserService {
 	public void logout(HttpSession session) throws Exception;
 
 	public boolean checkAvailableId(String userId) throws Exception;
+
+	public UserVO selectInstructor(int lectureId) throws Exception;
 }
