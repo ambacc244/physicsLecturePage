@@ -3,7 +3,7 @@
 ![](img/main.PNG)
 
 
-##Purpose
+## Purpose
 Each OSU student spends approximately $70,000 for learning materials. This project is the first step to provide free learning materials and platform for students. The virtual classroom page will replace the current online lecture pages. Lectures can be provided without using other companies.
 
 
