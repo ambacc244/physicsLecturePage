@@ -48,6 +48,7 @@
 
 * fa338ae : Logger(slf4j)로 모든 기존 stdio 대체, 사용하지않는 모든 import들 삭제. 포멧터적용.
 * c8dda5c : 404핸들러 추가 (URL에 맵핑된 모든 제외 URL은 404페이지로 이동), 500핸들러추가 (모든 internal 이슈 (Database관련등)은 500 page로 이동)
+
 >Yeongae
 
 * 6d2a3a0 : CSS - Register 폼
