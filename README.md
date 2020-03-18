@@ -1,8 +1,11 @@
 # Virtual Classroom Page
+
 ![](img/main.PNG)
+
 
 ##Purpose
 Each OSU student spends approximately $70,000 for learning materials. This project is the first step to provide free learning materials and platform for students. The virtual classroom page will replace the current online lecture pages. Lectures can be provided without using other companies.
+
 
 ## Installation
 
@@ -17,6 +20,7 @@ Each OSU student spends approximately $70,000 for learning materials. This proje
 * CSS - physicsLecturePage/physics/src/main/webapp/resources/css/
 * Images - physicsLecturePage/physics/src/main/webapp/resources/images/
 * View(JSP) - physicsLecturePage/physics/src/main/webapp/WEB-INF/views/
+
 
 ## Author
 * Yeongae Lee - ambacc244@naver.com
