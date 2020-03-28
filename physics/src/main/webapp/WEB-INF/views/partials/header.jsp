@@ -5,6 +5,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css?ver=1" type="text/css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style2.css?ver=2" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
